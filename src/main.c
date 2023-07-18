@@ -10,8 +10,11 @@
  * @brief Test the write kv module
  * 
  * @todo 
- *      1. modular name space for functions and structures
- *      2.  
+ *      1. modular name space for functions and structures.
+ *      2. extend the functionality so that the structre can be reset
+ *         this should allow the reuse of already allocated memory, so 
+ *         must track what has been alocated as well as what has been used.
+ *      3. Extend the library so that the structure can be enlarged.
  * @param argc 
  * @param argv 
  * @return int 
