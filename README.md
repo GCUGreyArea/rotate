@@ -1,5 +1,13 @@
 # C base KV render function
 
+## Design considerations
+
+The functionality creates embeded structures (structures within structres) in order to store temporary values, then renders the string at the end. 
+
+Another equaly valida aproach would be to not store the temporary values, and simply render the string as each value is recieved. This would require you to calculate the length of the string and keep track of the possition you are at. At some point the functionality would need to be able to signal that no more values could be rendered. This would be more memory efficient as you would have no temp values to store and all conversion could happen on the stack.
+
+You should be able to addapt the structures and specifically the render function to do exactly that. 
+ 
 ## Functionality 
 
 This is a simple library that tokens as `key` `value` pairs to be added into a structure, then rendered into a `KV` string. 
