@@ -10,8 +10,8 @@ Currently the library supports `int` and `char *` values, and nhas the following
 data_t * create_data(size_t items);
 error_t add_int_kv_value(data_t *data, char *key, int value);
 error_t add_str_kv_value(data_t *data, char *key, char* value);
-error_t render(data_t * keys);
-void teardown(data_t * string);
+error_t render(data_t * data);
+void teardown(data_t * data);
 ```
 
 Extending supported types in a matter of implementing a function to convert the type to a string, then call `add_str_kv_value` on the `data` object.
@@ -39,11 +39,14 @@ At the end of the life of the object `teardown` must be called to free memory al
 
 ## TODO
 
-1. modular name space for functions and structures.
-2. extend the functionality so that the structre can be reset.
+1. Rename functions and structures to to avoid namespace polution.
+2. Extend the functionality so that the structre can be reset.
    1. This should allow the reuse of already allocated memory, so 
    must track what has been alocated as well as what has been used
-   and reset other variable to point to the stat of usable space.
+   and reset other variable to point to the start of usable space.
    2. It will also need to clear existing entries so that their memory 
-   footprint is erased.
+   footprint (their content) is erased.
 3. Extend the library so that the structure can be enlarged.
+4. Document structures and functions, this sould include (see example above `create_data`)
+   1. required arguments
+   2. return values
