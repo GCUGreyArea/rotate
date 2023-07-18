@@ -1,4 +1,4 @@
-NAME	= test
+NAME	= data
 TARGET  = test_$(NAME)
 
 CXXSRC = $(wildcard src/*.cpp)
@@ -12,7 +12,7 @@ LIBDEP  = $(LIBDIR)/$(BUILD)/$(LIB)
 CXXOBJ    := $(patsubst %.cpp,$(BUILD)/%.o,$(CXXSRC))
 COBJ      := $(patsubst %.c,$(BUILD)/%.o,$(CSRC))
 PWD       := $(shell pwd)
-LINK      := -lgtest
+LINK      := -lgtest_main -lgtest -lpthread
 
 ifeq ($(UNAME), Darwin)
 CC       = cc
