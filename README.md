@@ -15,11 +15,12 @@ This is a simple library that tokens as `key` `value` pairs to be added into a s
 Currently the library supports `int` and `char *` values, and nhas the following functions.
 
 ```c
-data_t * create_data(size_t items);
-error_t add_int_kv_value(data_t *data, char *key, int value);
-error_t add_str_kv_value(data_t *data, char *key, char* value);
-error_t render(data_t * data);
-void teardown(data_t * data);
+data_t *create_data(size_t items);
+data_err_t add_int_kv_value(data_t *data, const char *key, const int value);
+data_err_t add_str_kv_value(data_t *data, const char *key, const char *value);
+data_err_t render(data_t *data);
+void teardown(data_t *data);
+const char * get_string_value_for_err(data_err_t err);
 ```
 
 Extending supported types in a matter of implementing a function to convert the type to a string, then call `add_str_kv_value` on the `data` object.
@@ -28,7 +29,7 @@ Extending supported types in a matter of implementing a function to convert the 
 
 ```c
 data_t * data = create_data(3);
-error_t err = add_int_kv_value(data,"key",123);
+data_err_t err = add_int_kv_value(data,"key",123);
 assert(err == OK);
 err = add_str_kv_value(data,"other_key","some value");
 assert(err == OK);
@@ -38,6 +39,8 @@ assert(err == OK);
 
 err = render(data);
 assert(err == OK);
+
+teardown(data);
 ```
 
 In this instance, `render` will fill out the `data->string` with the value `"key=123,other_key=some value,key_1234=564092345"`. 
