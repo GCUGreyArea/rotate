@@ -22,12 +22,13 @@ typedef enum error
     OK = 0,
     NOT_INITIALISED,
     WRITE_OUT_OF_BOUNDS
-} error_t;
+} data_err_t;
 
 data_t *create_data(size_t items);
-error_t add_int_kv_value(data_t *data, char *key, int value);
-error_t add_str_kv_value(data_t *data, char *key, char *value);
-error_t render(data_t *data);
+data_err_t add_int_kv_value(data_t *data, const char *key, const int value);
+data_err_t add_str_kv_value(data_t *data, const char *key, const char *value);
+data_err_t render(data_t *data);
 void teardown(data_t *data);
+const char * get_string_value_for_err(data_err_t err);
 
 #endif // DATA_H

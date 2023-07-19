@@ -39,7 +39,7 @@ data_t *create_data(size_t size)
     return data;
 }
 
-error_t add_str_kv_value(data_t *data, char *key, char *value)
+data_err_t add_str_kv_value(data_t *data, const char *key, const char *value)
 {
     if (data == NULL)
     {
@@ -74,7 +74,7 @@ error_t add_str_kv_value(data_t *data, char *key, char *value)
     return OK;
 }
 
-error_t add_int_kv_value(data_t *data, char *key, int value)
+data_err_t add_int_kv_value(data_t *data, const char *key, const int value)
 {
     if (data == NULL)
     {
@@ -88,7 +88,7 @@ error_t add_int_kv_value(data_t *data, char *key, int value)
     return add_str_kv_value(data, key, v_arr);
 }
 
-error_t render(data_t *data)
+data_err_t render(data_t *data)
 {
     if (data == NULL)
     {
@@ -104,7 +104,7 @@ error_t render(data_t *data)
     }
 
     // We need to alocate enough space for all keys and values
-    // pluss a comman and equals sign for each entry, -1 for the last command 
+    // pluss a comman and equals sign for each entry, -1 for the last command
     // which is not added
     int total_len = total_key_len + total_data_len + (data->index * 2) - 1;
 
@@ -155,4 +155,21 @@ void teardown(data_t *data)
     data->index = 0;
 
     free(data);
+}
+
+const char *get_string_value_for_err(data_err_t err)
+{
+    switch (err)
+    {
+    case OK:
+        return "OK";
+    case NOT_INITIALISED:
+        return "NOT_INITIALISED";
+    case WRITE_OUT_OF_BOUNDS:
+        return "NOT_INITIALISED";
+    default:
+        break;
+    }
+
+    return "UNKNOWN";
 }
