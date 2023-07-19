@@ -8,6 +8,29 @@ Another equaly valida aproach would be to not store the temporary values, and si
 
 You should be able to addapt the structures and specifically the render function to do exactly that. 
  
+## Run from the command line
+
+You can test the library by running the binarry creted with the library. 
+
+Running `./build/data -h` or `./build/data --help` will give you the help screan
+
+```shell
+Construct a key value string from individual arguments passed on the command line
+Usage:
+        ./build/data [-h | --help]: diplay this message
+        ./build/data <key value list>
+        Example: ./build/data name "Barry Robinson" company "Northrup Grumman" ocupation "Lead cyber engineer"
+        This wil product the string : name=Barry Robinson,company=Northrup Grumman,ocupation=Lead cyber engineer
+```
+
+Supply a non deliniated list or argument in pairs and the program will construct a KV string from the arguments.
+
+
+```shell
+$ ./build/data name "Barry Robinson" company "Northrup Grumman" ocupation "Lead cyber engineer"
+String: "name=Barry Robinson,company=Northrup Grumman,ocupation=Lead cyber engineer"
+$
+```
 ## Functionality 
 
 This is a simple library that tokens as `key` `value` pairs to be added into a structure, then rendered into a `KV` string. 
