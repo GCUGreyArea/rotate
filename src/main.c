@@ -32,7 +32,16 @@ int main(int argc, char **argv)
         printf("./build/data \"name\", \"barry\",\"job\",\"lead cyber engineer\"\n");
         exit(0);
     }
-    else if((argc-1) % 2 > 0) {
+    else if(argc == 2 && (strcmp(argv[1],"--help") == 0 || strcmp(argv[1],"-h") == 0)) {
+        printf("\nConstruct a key value string from individual arguments passed on the command line\n");
+        printf("Usage:\n");
+        printf("\t./build/data [-h | --help]: diplay this message\n");
+        printf("\t./build/data <key value list>\n");
+        printf("\tExample: ./build/data name \"Barry Robinson\" copany \"Northrup Grumman\" ocupation \"Lead cyber engineer\"\n");
+        printf("\tThis wil product the string : name=Barry Robinson,company=Northrup Grumman,ocupation=Lead cyber engineer\n\n");
+        exit(0);
+    }
+    else  if((argc-1) % 2 != 0) {
         printf("uneaven number of arguments. Key values must be supplied in pairs\n");
         exit(0);
     }
@@ -48,7 +57,6 @@ int main(int argc, char **argv)
             exit(0);
         }
     }
-
 
     err = render(data);
     if(err != OK) {
