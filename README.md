@@ -71,6 +71,40 @@ In this instance, `render` will fill out the `data->string` with the value `"key
 
 At the end of the life of the object `teardown` must be called to free memory allocated by the library.
 
+## Runing benchmarks
+
+To run `benchmarks` you will need to build and install the `Google Benchmark` framework. 
+
+```shell
+# Check out the library.
+$ git clone https://github.com/google/benchmark.git
+# Go to the library root directory
+$ cd benchmark
+# Make a build directory to place the build output.
+$ cmake -E make_directory "build"
+# Generate build system files with cmake, and download any dependencies.
+$ cmake -E chdir "build" cmake -DBENCHMARK_DOWNLOAD_DEPENDENCIES=on -DCMAKE_BUILD_TYPE=Release ../
+# or, starting with CMake 3.13, use a simpler form:
+# cmake -DCMAKE_BUILD_TYPE=Release -S . -B "build"
+# Build the library.
+$ cmake --build "build" --config Release 
+sudo cmake --build "build" --config Release --target install
+```
+
+## Runing Tests
+
+To run `benchmarks` you will need to build and install the `Google Benchmark` framework.
+
+```shell
+git clone https://github.com/google/googletest.git -b v1.13.0
+cd googletest        # Main directory of the cloned repository.
+mkdir build          # Create a directory to hold the build output.
+cd build
+cmake ..             # Generate native build scripts for GoogleTest.
+
+make
+sudo make install
+```
 ## TODO
 
 1. Rename functions and structures to avoid namespace pollution.
