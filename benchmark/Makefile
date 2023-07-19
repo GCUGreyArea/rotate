@@ -1,4 +1,4 @@
-NAME  = parser
+NAME  = data
 CXSRC = $(wildcard src/*.cpp)
 CSRC  = $(wildcard src/*.c)
 
