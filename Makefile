@@ -90,7 +90,11 @@ benchmark: $(BNCTARGET)
 
 project:
 	cd $(LIBDIR) && make
+	cd $(TESTDIR) && make
+	cd $(BENCHDIR) && make
 	make
+	./$(TESTTARGET)
+	./$(BNCTARGET)
 
 help:
 	@echo "\n\n"
