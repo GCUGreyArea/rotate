@@ -27,29 +27,37 @@
  */
 int main(int argc, char **argv)
 {
-    data_t *data = create_data(3);
+    if( argc == 1) {
+        printf("Please supply some argument to convert to kv string\n");
+        printf("./build/data \"name\", \"barry\",\"job\",\"lead cyber engineer\"\n");
+        exit(0);
+    }
+    else if((argc-1) % 2 > 0) {
+        printf("uneaven number of arguments. Key values must be supplied in pairs\n");
+        exit(0);
+    }
 
-    assert(data);
-    assert(data->kv_ar);
-    assert(data->index == 0);
-    assert(data->size == 3);
+    data_t *data = create_data(argc-1 / 2);
+    data_err_t err;
+    for(int i=1; i < argc; i+=2) {
+        char * key = argv[i];
+        char * value = argv[i+1];
+        err = add_str_kv_value(data,key,value);
+        if(err != OK) {
+            printf("ERROR: add_str_kv_value return \"%s\"", get_string_value_for_err(err));
+            exit(0);
+        }
+    }
 
-    assert(add_int_kv_value(data, "key", 123) == OK);
-    assert(add_str_kv_value(data, "other_key", "some value") == OK);
-    assert(add_int_kv_value(data, "key_1234", 564092345) == OK);
-    assert(add_str_kv_value(data, "no key here", "no other value") == WRITE_OUT_OF_BOUNDS);
 
-    assert(strcmp(data->kv_ar[0].key, "key") == 0);
-    assert(strcmp(data->kv_ar[1].key, "other_key") == 0);
-    assert(strcmp(data->kv_ar[2].key, "key_1234") == 0);
+    err = render(data);
+    if(err != OK) {
+        printf("ERROR: Faiuled to render data \"$+%s\"\n", get_string_value_for_err(err));
+        exit(0);
+    } 
 
-    assert(strcmp(data->kv_ar[0].value, "123") == 0);
-    assert(strcmp(data->kv_ar[1].value, "some value") == 0);
-    assert(strcmp(data->kv_ar[2].value, "564092345") == 0);
-
-    assert(render(data) == OK);
-
-    assert(strcmp(data->string, "key=123,other_key=some value,key_1234=564092345") == 0);
+    printf("String: \"%s\"\n", data->string);
 
     teardown(data);
+    exit(1);
 }
