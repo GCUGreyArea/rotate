@@ -17,11 +17,13 @@ LINK      := -lgtest -lglog -lpthread
 ifeq ($(UNAME), Darwin)
 CC       = cc
 CXX      = c++
-else
+else 
 CC     = gcc
 CXX    = g++
 endif
 
+
+CXXFLAGS += -I/c/msys64-new/mingw64/include
 
 all: $(TARGET) $(OBJ) $(COBJ) $(LIBDEP)
 

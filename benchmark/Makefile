@@ -1,4 +1,5 @@
-NAME  = data
+NAME  = test
+
 CXSRC = $(wildcard src/*.cpp)
 CSRC  = $(wildcard src/*.c)
 

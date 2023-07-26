@@ -1,20 +1,23 @@
 
-NAME  = data
+NAME  = test
 
-CXSRC = $(shell find src -name *.cpp)
-CSRC  = $(shell find src -name *.c)
-UNAME = $(shell uname)
+SOURCEDIR = src
 
-OBJ := $(patsubst %.cpp,$(BUILD)/%.o,$(CXSRC)) $(patsubst %.c,$(BUILD)/%.o,$(CSRC))
+SRC_C = $(wildcard $(SOURCEDIR)/*.c)
+SRC_CPP += $(wildcard $(SOURCEDIR)/*.cpp)
 
 BUILD = build
 LIBDIR = .
 
+OBJ = $(patsubst %.cpp,$(BUILD)/%.o,$(SRC_CPP)) 
+OBJ += $(patsubst %.c,$(BUILD)/%.o,$(SRC_C))
+
+
 TARGET  = lib$(NAME).so
 LIBDIR  =  .
 
-OBJ    := $(patsubst %.cpp,$(BUILD)/%.o,$(CXSRC)) $(patsubst %.c,$(BUILD)/%.o,$(CSRC))
 
+UNAME = $(shell uname)
 ifeq ($(UNAME), Darwin)
 CC       = cc
 CXX      = c++
@@ -24,6 +27,7 @@ CXX    = g++
 endif
 
 CFLAGS += -fPIC
+CXXFLAGS += -fPIC
 
 all: build $(TARGET)
 
@@ -31,6 +35,7 @@ build:
 	mkdir -p build/src
 
 $(TARGET) : $(OBJ)
+	@echo "$(OBJ)"
 	$(CC) $(CFLAGS) $(OBJ) -shared -o $(BUILD)/$(TARGET)
 
 $(BUILD)/%.o: %.c

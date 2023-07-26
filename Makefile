@@ -1,4 +1,4 @@
-TARGET = data
+TARGET = test
 
 BUILD	   = build
 TESTDIR    = test
@@ -12,10 +12,15 @@ BNCTARGET  = $(BENCHDIR)/$(BUILD)/benchmark_$(TARGET)
 LIBTARGET  = $(LIBDIR)/$(BUILD)/lib$(TARGET).so
 DOCTARGET  = $(DOXYDIR)/generated
 
-SRC = $(shell find src -name '*.cpp')
-SRC += $(shell find src -name '*.c')
+SOURCEDIR = src
+
+SRC = $(wildcard $(SOURCEDIR)/*.c)
+SRC += $(wildcard $(SOURCEDIR)/*.cpp)
 
 OBJ := $(patsubst %.cpp,$(BUILD)/%.o,$(SRC))
+
+PWD :=$(shell pwd)
+UNAME := $(shell uname)
 
 INC = -I$(PWD)/$(LIBDIR)/src 
 
@@ -23,8 +28,8 @@ LNK = -L$(PWD)/lib/build \
 	  -Wl,-rpath,$(LIBDIR)/$(BUILD)
     
 LIBRARIES = -lbenchmark -lbenchmark_main -lgtest
-CFLAGS   = -std=c11 -Wall -g -fsanitize=address $(INC)
-CXXFLAGS = -std=c++17 -fPIC -Wall -g -O1 -fsanitize=address $(INC)
+CFLAGS   = -std=c11 -Wall -g $(INC)
+CXXFLAGS = -std=c++17 -Wall -g $(INC)
 
 CC = gcc
 CXX = g++
@@ -37,9 +42,6 @@ export CC
 export GXX
 
 ARGS =
-
-PWD :=$(shell pwd)
-UNAME := $(shell uname)
 
 all: $(LIBTARGET) $(TARGET)
 
