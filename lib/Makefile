@@ -1,5 +1,5 @@
 
-NAME  = test
+NAME  = rotate
 
 SOURCEDIR = src
 
