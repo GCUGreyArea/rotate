@@ -4,24 +4,23 @@
 #include <memory>
 #include <cstdint>
 #include <cstring>
+#include <iostream>
 
 class Buffer {
-    Buffer(size_t size) :
-        m_buff(new uint8_t[size]),
-        m_len(size) {}
+public:
+    Buffer(const char * inf, const char * outf) :
+        m_byte(0),
+        m_in(inf),
+        m_out(outf) {}
 
-    ~Buffer() {
-        // Whipe everything out when we are done
-        std::memset(m_buff,0,m_len);
-        delete [] m_buff;
-        m_buff = nullptr;
-    }
+    ~Buffer() {}
 
     void rotate_left();
 
     // Hold our digital data
-    uint8_t * m_buff;
-    size_t m_len;  
+    uint8_t  m_byte;
+    std::string m_in;
+    std::string m_out;
 };
 
 #endif // !ROTATE_H

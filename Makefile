@@ -1,8 +1,8 @@
-TARGET = test
+TARGET = rotate
 
+PWD 	   = $(shell pwd) 
 BUILD	   = build
 TESTDIR    = test
-BENCHDIR   = benchmark
 LIBDIR     = lib
 DOXYDIR	   = docs
 BUILD      = build
@@ -22,10 +22,10 @@ OBJ := $(patsubst %.cpp,$(BUILD)/%.o,$(SRC))
 PWD :=$(shell pwd)
 UNAME := $(shell uname)
 
-INC = -I$(PWD)/$(LIBDIR)/src 
+INC = -I$(PWD)/$(LIBDIR)/src -I$(PWD)/$(LIBDIR)
 
 LNK = -L$(PWD)/lib/build \
-	  -Wl,-rpath,$(LIBDIR)/$(BUILD)
+	  -Wl,-rpath,$(PWD)/$(LIBDIR)/$(BUILD)
     
 LIBRARIES = -lbenchmark -lbenchmark_main -lgtest
 CFLAGS   = -std=c11 -Wall -g $(INC)
@@ -46,12 +46,12 @@ ARGS =
 all: $(LIBTARGET) $(TARGET)
 
 $(TARGET) : build $(LIBTARGET) $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(BUILD)/$(TARGET) $(LNK) -l$(TARGET)
+	$(CXX) $(CXXFLAGS) $(OBJ) -o $(BUILD)/$(TARGET) $(LNK) -l$(TARGET)
 
 build :
 	mkdir -p "$(BUILD)/src"
 
-$(LIBTARGET) :
+$(LIBTARGET) : 
 	cd $(LIBDIR) && make 
 
 $(TESTTARGET) : $(LIBTARGET)
@@ -71,7 +71,6 @@ $(BUILD)/%.o: %.cpp
 
 clean:
 	cd $(DOXYDIR) && make clean
-	cd $(BENCHDIR) && make clean
 	cd $(TESTDIR) && make clean
 	cd $(LIBDIR) && make clean
 	rm -rf $(BUILD)

@@ -4,13 +4,12 @@
 #include <stdbool.h>
 #include <assert.h>
 
-#include <libData.h>
-
-#include <test.h>
+#include <librotate.h>
 
 int main(int argc, char **argv)
 {
-    some_funct();
-    
+    Buffer b("test.bin","test-out.bin");
+
+    b.rotate_left();
     return 1;
 }

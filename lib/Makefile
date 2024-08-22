@@ -27,7 +27,7 @@ CXX    = g++
 endif
 
 CFLAGS += -fPIC
-CXXFLAGS += -fPIC
+CXXFLAGS += -g -fPIC
 
 all: build $(TARGET)
 
@@ -36,7 +36,7 @@ build:
 
 $(TARGET) : $(OBJ)
 	@echo "$(OBJ)"
-	$(CC) $(CFLAGS) $(OBJ) -shared -o $(BUILD)/$(TARGET)
+	$(CXX) $(CXXFLAGS) $(OBJ) -shared -o $(BUILD)/$(TARGET)
 
 $(BUILD)/%.o: %.c
 	$(CC) -c $(CFLAGS) $< -o $@
