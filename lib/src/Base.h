@@ -10,6 +10,7 @@ public:
     virtual void init() = 0;
     virtual uint8_t get_next_byte() = 0; 
     virtual void write_next_byte(uint8_t byte) = 0;
+    virtual void write_first_byte(uint8_t byte) = 0;
     virtual unsigned int get_length() = 0;
     virtual bool end() = 0;
 
