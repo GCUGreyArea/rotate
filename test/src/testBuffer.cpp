@@ -46,7 +46,10 @@ public:
 
     virtual void rotate_left() {
         Base::rotate_left();
-    
+    }
+
+    virtual void rotate_right() {
+        Base::rotate_right();
     }
 
     virtual bool end() {
@@ -79,7 +82,6 @@ TEST(testBuffer,tetsBasicBitShift) {
 }
 
 TEST(testBuffer,testRotateLeftOnSimpleArray) {
-    std::ofstream out_file;
     uint8_t bytes[] = {146, 146, 146};
 
     ArrayBuff b(bytes,3);
@@ -226,4 +228,49 @@ TEST(testBuffer,testRotateLeftWithFilesAndComplexBitPatterns) {
 
     std::remove("test.bin");
     std::remove("out.bin");
+}
+
+TEST(testBuffer,testRotateRightOnSimpleArray) {
+    uint8_t bytes[] = {146, 146, 146};
+
+    ArrayBuff b(bytes,3);
+    b.init();
+
+    b.rotate_right();
+    b.init();
+
+    
+    ASSERT_EQ((uint8_t)73,b.get_rotate_byte());
+    ASSERT_EQ((uint8_t)73,b.get_rotate_byte());
+    ASSERT_EQ((uint8_t)73,b.get_rotate_byte());
+ 
+}
+
+TEST(testBuffer,testRotateRightOnSingleByte) {
+    uint8_t bytes[] = {146};
+
+    ArrayBuff b(bytes,1);
+    b.init();
+
+    b.rotate_right();
+    b.init();
+
+    ASSERT_EQ((uint8_t)73,b.get_rotate_byte()); 
+}
+
+TEST(testBuffer,testRotateRightComplpexArray) {
+    uint8_t bytes[] = {146, 147, 148, 149, 150};
+
+    ArrayBuff b(bytes,5);
+    b.init();
+
+    b.rotate_right();
+    b.init();
+
+    
+    ASSERT_EQ((uint8_t)73,b.get_rotate_byte());  
+    ASSERT_EQ((uint8_t)73,b.get_rotate_byte()); 
+    ASSERT_EQ((uint8_t)202,b.get_rotate_byte()); 
+    ASSERT_EQ((uint8_t)74,b.get_rotate_byte()); 
+    ASSERT_EQ((uint8_t)203,b.get_rotate_byte()); 
 }

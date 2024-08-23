@@ -30,4 +30,24 @@ void Base::rotate_left()
 
 void Base::rotate_right()
 {
+
+    uint8_t byte = get_next_byte();
+    uint8_t save_bit = byte & 0x1;
+
+    uint8_t byte_swap = byte >> 1;
+    uint8_t first_byte = byte;
+
+    while (!end())
+    {
+        byte = get_next_byte();
+
+        uint8_t b = byte_swap | (byte << 7);
+        write_next_byte(b);
+        byte_swap = byte >> 1;
+    }
+
+    byte = (byte_swap | (save_bit << 7));
+
+    write_next_byte(byte);
+    // write_first_byte()
 }
