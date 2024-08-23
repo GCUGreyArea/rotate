@@ -22,10 +22,12 @@ CC     = gcc
 CXX    = g++
 endif
 
+CXXFLAGS += -g
+
 all: $(TARGET) $(OBJ) $(COBJ) $(LIBDEP)
 
 $(TARGET) : build $(CXXOBJ) $(COBJ)
-	$(CXX) $(CXXFLAGS) -g -I$(LIBDIR) $(CXXOBJ) $(COBJ) -o $(BUILD)/$(TARGET) -l$(NAME) $(LINK) $(LNK)
+	$(CXX) $(CXXFLAGS) -I$(LIBDIR) $(CXXOBJ) $(COBJ) -o $(BUILD)/$(TARGET) -l$(NAME) $(LINK) $(LNK)
 
 build:
 	mkdir -p "$(BUILD)/src"
