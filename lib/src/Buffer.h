@@ -19,6 +19,7 @@ public:
     virtual void init();
     virtual uint8_t get_next_byte(); 
     virtual void write_next_byte(uint8_t byte);
+    virtual void write_first_byte(uint8_t byte);
     virtual unsigned int get_length() {return m_length;}
     virtual bool end();
 

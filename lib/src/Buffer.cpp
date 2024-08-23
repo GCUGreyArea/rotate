@@ -36,6 +36,13 @@ void Buffer::write_next_byte(uint8_t byte)
     m_out_file.write((char *)&byte, 1);
 }
 
+void Buffer::write_first_byte(uint8_t byte) {
+    auto pp = m_out_file.tellp();
+    m_out_file.seekp(0, m_out_file.beg);
+    m_out_file.write((char *)&byte, 1);
+    m_out_file.seekp(pp);
+}
+
 bool Buffer::end()
 {
     return m_length == m_pos;
