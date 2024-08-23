@@ -1,14 +1,12 @@
 TARGET = rotate
 
-PWD 	   = $(shell pwd) 
+PWD 	   = $(shell pwd)
 BUILD	   = build
 TESTDIR    = test
 LIBDIR     = lib
 DOXYDIR	   = docs
-BUILD      = build
 
 TESTTARGET = $(TESTDIR)/$(BUILD)/test_$(TARGET)
-BNCTARGET  = $(BENCHDIR)/$(BUILD)/benchmark_$(TARGET)
 LIBTARGET  = $(LIBDIR)/$(BUILD)/lib$(TARGET).so
 DOCTARGET  = $(DOXYDIR)/generated
 
@@ -19,16 +17,15 @@ SRC += $(wildcard $(SOURCEDIR)/*.cpp)
 
 OBJ := $(patsubst %.cpp,$(BUILD)/%.o,$(SRC))
 
-PWD :=$(shell pwd)
 UNAME := $(shell uname)
 
 INC = -I$(PWD)/$(LIBDIR)/src -I$(PWD)/$(LIBDIR)
 
-LNK = -L$(PWD)/lib/build \
-	  -Wl,-rpath,$(PWD)/$(LIBDIR)/$(BUILD)
+LNK = -L$(PWD)/$(LIBDIR)/build \
+	  -Wl,-rpath,$(PWD)/$(LIBDIR)/build
     
 LIBRARIES = -lbenchmark -lbenchmark_main -lgtest
-CFLAGS   = -std=c11 -Wall -g $(INC)
+CFLAGS   = -std=c11 -Wall -g -I $(INC)
 CXXFLAGS = -std=c++17 -Wall -g $(INC)
 
 CC = gcc
@@ -51,14 +48,12 @@ $(TARGET) : build $(LIBTARGET) $(OBJ)
 build :
 	mkdir -p "$(BUILD)/src"
 
-$(LIBTARGET) : 
+
+$(LIBTARGET) :  
 	cd $(LIBDIR) && make 
 
 $(TESTTARGET) : $(LIBTARGET)
 	cd $(TESTDIR) && make
-
-$(BNCTARGET) : $(LIB)
-	cd $(BENCHDIR) && make
 
 $(DOCTARGET) :
 	cd $(DOXYDIR) && make

@@ -1,4 +1,4 @@
-NAME	= data
+NAME	= rotate
 TARGET  = test_$(NAME)
 
 CXXSRC = $(wildcard src/*.cpp)
@@ -22,13 +22,10 @@ CC     = gcc
 CXX    = g++
 endif
 
-
-CXXFLAGS += -I/c/msys64-new/mingw64/include
-
 all: $(TARGET) $(OBJ) $(COBJ) $(LIBDEP)
 
 $(TARGET) : build $(CXXOBJ) $(COBJ)
-	$(CXX) $(CXXFLAGS) $(CXXOBJ) $(COBJ) -o $(BUILD)/$(TARGET) -l$(NAME) $(LINK) $(LNK)
+	$(CXX) $(CXXFLAGS) -g -I$(LIBDIR) $(CXXOBJ) $(COBJ) -o $(BUILD)/$(TARGET) -l$(NAME) $(LINK) $(LNK)
 
 build:
 	mkdir -p "$(BUILD)/src"
