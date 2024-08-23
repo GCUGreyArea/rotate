@@ -38,7 +38,11 @@ public:
     
     virtual void write_next_byte(uint8_t byte) {
         m_out[m_out_place++] = byte;
-    };
+    }
+
+    virtual void write_first_byte(uint8_t byte) {
+        m_out[0] = byte;
+    }
 
     virtual unsigned int get_length() {
         return m_size;
@@ -243,7 +247,7 @@ TEST(testBuffer,testRotateRightOnSimpleArray) {
     ASSERT_EQ((uint8_t)73,b.get_rotate_byte());
     ASSERT_EQ((uint8_t)73,b.get_rotate_byte());
     ASSERT_EQ((uint8_t)73,b.get_rotate_byte());
- 
+    
 }
 
 TEST(testBuffer,testRotateRightOnSingleByte) {
