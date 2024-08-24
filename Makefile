@@ -43,6 +43,7 @@ ARGS =
 all: $(LIBTARGET) $(TARGET)
 
 $(TARGET) : build $(LIBTARGET) $(OBJ)
+	cd lib && make
 	$(CXX) $(CXXFLAGS) $(OBJ) -o $(BUILD)/$(TARGET) $(LNK) -l$(TARGET)
 
 build :
