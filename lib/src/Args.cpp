@@ -5,8 +5,6 @@
 
 #include "Args.h"
 
-namespace Basic {
-
 /**
  * @brief Construct a new Args:: Args object
  * from the argument values passed into main
@@ -14,14 +12,14 @@ namespace Basic {
  * @param argc
  * @param argv
  */
-Args::Args(int argc, const char ** argv)
+Args::Args(int argc, char ** argv)
     : mArgv(argv)
     , mArgc(argc) {}
 
 
 /**
  * @brief Add a key to the data store that will not
- * expect a value tro be attached. A key is made up
+ * expect a value to be attached. A key is made up
  * of a shore key i.e. -a and an alternative key
  * i.e. --alt. Searching for the key must be done with
  * the short key.
@@ -44,13 +42,14 @@ void Args::add_key(std::string k, std::string a) {
 
 /**
  * @brief Add a flag that will have a value attached when it is
- * tested and retrieved.
+ * tested and retrieved. IF no value is supplied o the command line
+ * the default value supplied when the key is created will be retrieved.
  *
  * @param key
  * @param alt
  * @param def
  */
-void Args::add_string_value(std::string key, std::string alt, std::string def ) {
+void Args::add_string_value(std::string key, std::string alt, std::string def) {
 
 	std::string value="";
 	int idx=0;
@@ -157,5 +156,4 @@ bool Args::is_key_present(std::string key) {
         return true;
 
     return false;
-}
 }

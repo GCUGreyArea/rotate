@@ -20,11 +20,9 @@
 #include <cstddef>
 #include <unordered_set>
 
-namespace Basic {
-
 class Args {
 public:
-    Args(int argc, const char ** argv);
+    Args(int argc, char ** argv);
     void add_string_value(std::string idxName, std::string altName, std::string def = "");
     void add_int_value(std::string idxName, std::string altName, int def);
     void add_key(std::string key, std::string alt);
@@ -34,13 +32,12 @@ public:
 
 
 private:
-    const char ** mArgv;
+    char ** mArgv;
     int mArgc;
     std::map<std::string,int> mIntArgs;
     std::map<std::string,std::string>mStrArgs;
     std::unordered_set<std::string>mArgs;
 };
-}
 
 /**
  * @}
