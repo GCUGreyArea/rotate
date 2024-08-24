@@ -15,14 +15,16 @@
 
 #include <string>
 #include <memory>
+#include <vector>
 #include "Base.h"
 #include "ArrayBuffer.h"
 
 class HexString : public Base {
 public:
+    HexString(std::string str);
     HexString(const char * str);
     virtual ~HexString();
-    virtual void init(){};
+    virtual void init();
     virtual uint8_t get_next_byte(); 
     virtual void write_next_byte(uint8_t byte);
     virtual void write_first_byte(uint8_t byte);
@@ -32,6 +34,23 @@ public:
     virtual void rotate_left();
     virtual void rotate_right();
 
+    
+    uint8_t get_rotate_byte() {
+        return m_arr->get_rotate_byte();
+    }
+
+    void reset() {
+        m_arr->init();
+    }
+    
+    std::string render();
+
+
+
+protected:
+    std::string trim(const std::string& str, const std::string& whitespace = " \t");
+    std::vector<std::string> split(std::string s, std::string delimiter);
+
 private:
     std::string m_src;      //! source string
     std::string m_dst;      //! Destination rotated string
@@ -39,7 +58,7 @@ private:
     unsigned int m_wpos;    //! write position
 
     //! The array buffer object that will rotate the values
-    std::unique_ptr<ArrayBuff> m_arr;  
+    ArrayBuff * m_arr;
 };
 
 #endif//HEX_STRING_H
