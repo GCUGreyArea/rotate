@@ -12,6 +12,7 @@
 class Buffer : public Base {
 public:
     Buffer(const char * inf, const char * outf);
+    Buffer(std::string inf,std::string of);
     virtual ~Buffer();
     void rotate_left();
     void rotate_right();

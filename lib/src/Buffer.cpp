@@ -5,6 +5,11 @@ Buffer::Buffer(const char *inf, const char *outf) :
     m_out(outf),
     m_pos(0) {}
 
+Buffer::Buffer(std::string inf,std::string outf) : 
+    m_in(inf),
+    m_out(outf),
+    m_pos(0) {}
+
 Buffer::~Buffer()
 {
     m_in_file.close();
