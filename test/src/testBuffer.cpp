@@ -10,8 +10,6 @@
 #include <bitset>
 #include <cstdio>
 
-
-
 TEST(testBuffer,tetsBasicBitShift) {
     uint8_t bit = 128;       // 0xb10000000
     uint8_t bit2 = bit >> 7; // 0xb00000001
@@ -217,3 +215,42 @@ TEST(testBuffer,testRotateRightComplpexArray) {
     ASSERT_EQ((uint8_t)74,b.get_rotate_byte()); 
     ASSERT_EQ((uint8_t)203,b.get_rotate_byte()); 
 }
+
+TEST(testBuffer,testRotateRighLeftHexString) {
+    std::string vals("0x92,0x93,0x94,0x95,0x96");
+
+    HexString b(vals);
+    b.init();
+
+    b.rotate_left();
+    b.reset();
+
+    
+    ASSERT_EQ((uint8_t)37,b.get_rotate_byte());  
+    ASSERT_EQ((uint8_t)39,b.get_rotate_byte()); 
+    ASSERT_EQ((uint8_t)41,b.get_rotate_byte()); 
+    ASSERT_EQ((uint8_t)43,b.get_rotate_byte()); 
+    ASSERT_EQ((uint8_t)45,b.get_rotate_byte()); 
+
+    std::string str = b.render();
+
+    ASSERT_STREQ(str.c_str(),"0x25,0x27,0x29,0x2B,0x2D");
+}
+
+TEST(testBuffer,testRotateRightHexString) {
+    std::string vals("0x92,0x93,0x94,0x95,0x96");
+
+    HexString b(vals);
+    b.init();
+
+    b.rotate_right();
+    b.reset();
+
+    
+    ASSERT_EQ((uint8_t)73,b.get_rotate_byte());  
+    ASSERT_EQ((uint8_t)73,b.get_rotate_byte()); 
+    ASSERT_EQ((uint8_t)202,b.get_rotate_byte()); 
+    ASSERT_EQ((uint8_t)74,b.get_rotate_byte()); 
+    ASSERT_EQ((uint8_t)203,b.get_rotate_byte()); 
+}
+
