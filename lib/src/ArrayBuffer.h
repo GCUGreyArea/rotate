@@ -1,19 +1,41 @@
 #ifndef ARRAY_BUFFER_H
 #define ARRAY_BUFFER_H
 
+#include <cstring>
+#include <vector>
 #include "Base.h"
 
 class ArrayBuff : Base {
 public:
     virtual ~ArrayBuff() {
+        // remove all data before deleting
+        memset(m_out,0,m_size);
+        memset(m_arr,0,m_size);
         delete [] m_out;
+        delete [] m_arr;
     }
 
     ArrayBuff(uint8_t * ar, unsigned int size) : 
-        m_arr(ar),
+        m_arr(new uint8_t[size]),
         m_out(new uint8_t[size]),
         m_size(size),
-        m_place(0) {}
+        m_place(0) {
+            memcpy(m_arr,ar,size*sizeof(uint8_t));
+            memset(m_out,0,size);
+        }
+
+    ArrayBuff(std::vector<uint8_t> ar) : 
+        m_arr(new uint8_t[ar.size()]),
+        m_out(new uint8_t[ar.size()]),
+        m_size(ar.size()),
+        m_place(0) {
+            int i=0;
+            for(auto n : ar) {
+                m_arr[i++] = n;
+            }
+
+            memset(m_out,0,m_size);
+        }
 
     virtual void init() {
         m_place = 0;
@@ -56,6 +78,25 @@ public:
     uint8_t get_rotate_byte() {
         return m_out[m_out_place++];
     }
+
+    std::vector<uint8_t> get_buffer_vector() {
+        std::vector<uint8_t> vec;
+        vec.reserve(m_size);
+        for(unsigned int i=0;i<m_size;i++) {
+            vec.push_back(m_out[i]);
+        }
+
+        return vec;
+    }
+
+    uint8_t * get_output() {
+        return m_out;
+    }
+
+    unsigned int size() {
+        return m_size;  
+    }
+
 
 private:
     uint8_t * m_arr;
