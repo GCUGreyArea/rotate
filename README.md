@@ -19,6 +19,9 @@ Note:   If no value for for '--rotate' is supplied, left is assumed
 
 ## Design rational
 
+The class hierachy is designed with Test Driven Development (TDD) in mide. The base class `Base` (unimaginatively named) implement the bit rotation logic, and the derived classes `HexString` and `ArrayBuffer` use those services by implementing the virtual methods to access the inderlying functionality.
+
+All classes have been designed to whipe memory clean after use.
 
 ## Reseaerch lilnks / externaly sourced code segments
 
