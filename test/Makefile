@@ -27,6 +27,7 @@ CXXFLAGS += -g
 all: $(TARGET) $(OBJ) $(COBJ) $(LIBDEP)
 
 $(TARGET) : build $(CXXOBJ) $(COBJ)
+	cd lib && make
 	$(CXX) $(CXXFLAGS) -I$(LIBDIR) $(CXXOBJ) $(COBJ) -o $(BUILD)/$(TARGET) -l$(NAME) $(LINK) $(LNK)
 
 build:
