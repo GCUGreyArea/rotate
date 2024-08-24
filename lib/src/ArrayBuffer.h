@@ -1,6 +1,18 @@
 #ifndef ARRAY_BUFFER_H
 #define ARRAY_BUFFER_H
 
+/**
+ * @file ArrayBuffer.h
+ * @author Barry Robinson (barry.w.robinson@gmail.com)
+ * @brief Provide a class to drive unit tests to refine and 
+ * develop the rotation algorithm. 
+ * @version 0.1
+ * @date 2024-08-24
+ * 
+ * @copyright Copyright (c) 2024
+ * 
+ */
+
 #include <cstring>
 #include <vector>
 #include "Base.h"

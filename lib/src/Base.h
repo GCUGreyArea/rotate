@@ -1,6 +1,22 @@
 #ifndef BASE_H
 #define BASE_H
 
+/**
+ * @file Base.h
+ * @author Barry Robinson (barry.w.robinson@gemail.com)
+ * @brief The base class for the rotation system.  
+ * Base implements the bit rotation algorythm.
+ * We do it like this so that 
+ * 1. We can build unit tests to validate the functionality
+ * 2. We can addapt the system to use other formats without having to repeat code
+ * 
+ * @version 0.1
+ * @date 2024-08-24
+ * 
+ * @copyright Copyright (c) 2024
+ * 
+ */
+
 #include <iostream>
 #include <bitset>
 

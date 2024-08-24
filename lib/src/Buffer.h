@@ -1,6 +1,17 @@
 #ifndef ROTATE_H
 #define ROTATE_H
 
+/**
+ * @file Buffer.h
+ * @author your name (you@domain.com)
+ * @brief Buffer does the main work of 
+ * @version 0.1
+ * @date 2024-08-24
+ * 
+ * @copyright Copyright (c) 2024
+ * 
+ */
+
 #include "Base.h"
 #include <iostream>
 #include <fstream>

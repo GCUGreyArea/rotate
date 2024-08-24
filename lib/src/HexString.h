@@ -5,7 +5,7 @@
  * @author Barry Robinson (barry.w.robinson64@gmail.com)
  * @brief Create a class for rotating the binary values of 
  * strings where the values are represengted as hexidecimal 
- * in the form [0xAB,0xAC,0xBB,...,0x01]
+ * in the form "0xAB,0xAC,0xBB,...,0x01"
  * @version 0.1
  * @date 2024-08-24
  * 

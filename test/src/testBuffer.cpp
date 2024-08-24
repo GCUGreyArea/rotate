@@ -224,7 +224,6 @@ TEST(testBuffer,testRotateRighLeftHexString) {
 
     b.rotate_left();
     b.reset();
-
     
     ASSERT_EQ((uint8_t)37,b.get_rotate_byte());  
     ASSERT_EQ((uint8_t)39,b.get_rotate_byte()); 

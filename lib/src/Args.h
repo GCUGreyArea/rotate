@@ -7,12 +7,7 @@
  * @version 1.0
  * @date 11-10-2022
  *
- * @copyright Copyright (C) 2022 Alert Logic
- * @addtogroup lib
- * @{
- * @addtogroup Basic
- * @{
- * @addtogroup Args
+ * @copyright Copyright (C) 2022
  */
 
 #include <map>
@@ -39,9 +34,4 @@ private:
     std::unordered_set<std::string>mArgs;
 };
 
-/**
- * @}
- * @}
- * @}
- */
 #endif//__ARGS__
