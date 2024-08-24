@@ -3,5 +3,6 @@
 
 #include "src/Buffer.h"
 #include "src/ArrayBuffer.h"
+#include "src/Args.h"
 
 #endif //LIB_ROTATE_H
