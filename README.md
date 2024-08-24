@@ -1,17 +1,33 @@
 # Rotate
 
-## Bitwise rotate the content of a file
+![image](resources/hexegic.png)
 
-## Reseaerch lilnks
+Bitwise rotate the content of a file
 
-1. [bitset c++](https://stackoverflow.com/questions/7349689/how-to-print-using-cout-a-number-in-binary-form)
-2. [split string](https://stackoverflow.com/questions/14265581/parse-split-a-string-in-c-using-string-delimiter-standard-c)
+## Help
+
+```
+        ./build/rotate [-i | --in-file] <infile.bin> [-o | --out-file] <outfile.bin> [-r | --rotate] [left | right]
+        Take the content of infile.bin and rotate bits in '--rotate' direction, writing the output to outfile.bin
+
+        ./build/rotate -s <HEX STRING> [-r | -rotate] [left | right]
+        Take the HEX_STRING supplied as --string and rotate the bit values in the direction indicated by --rotate, then write the hex values to the console
+
+Note:   If no value for for '--rotate' is supplied, left is assumed
+        If the file specified by '--in-file' cannot be read, the program will terminate
+```
+
+## Design rational
+
+
+## Reseaerch lilnks / externaly sourced code segments
+
+1. [split string](https://stackoverflow.com/questions/14265581/parse-split-a-string-in-c-using-string-delimiter-standard-c)
 
 ## TODO
 
-1. Fix the build system for dependancies
-2. Add hex string support
-3. Either remove docs folder or add code documentation
+1. Fix the build system for dependancies and clean it up
+2. Either remove docs folder or add code documentation
 
 ## Brief
 
