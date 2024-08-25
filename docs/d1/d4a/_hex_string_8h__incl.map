@@ -1,0 +1,12 @@
+<map id="HexString.h" name="HexString.h">
+<area shape="rect" id="node1" title="Create a class for rotating the binary values of strings where the values are represengted as hexidec..." alt="" coords="137,5,236,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="119,229,190,256"/>
+<area shape="rect" id="node3" title=" " alt="" coords="28,80,86,107"/>
+<area shape="rect" id="node4" title=" " alt="" coords="110,80,188,107"/>
+<area shape="rect" id="node5" title=" " alt="" coords="194,155,256,181"/>
+<area shape="rect" id="node6" href="$d5/df1/_base_8h.html" title="The base class for the rotation system. &#160;&#160;Base implements the bit rotation algorythm...." alt="" coords="373,155,440,181"/>
+<area shape="rect" id="node9" href="$d5/d0e/_array_buffer_8h.html" title="Provide a class to drive unit tests to refine and develop the rotation algorithm." alt="" coords="262,80,372,107"/>
+<area shape="rect" id="node7" title=" " alt="" coords="413,229,493,256"/>
+<area shape="rect" id="node8" title=" " alt="" coords="330,229,389,256"/>
+<area shape="rect" id="node10" title=" " alt="" coords="282,155,349,181"/>
+</map>
