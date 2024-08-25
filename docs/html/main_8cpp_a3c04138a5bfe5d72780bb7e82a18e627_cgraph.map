@@ -1,0 +1,6 @@
+<map id="main" name="main">
+<area shape="rect" id="node1" title=" " alt="" coords="5,56,60,83"/>
+<area shape="rect" id="node2" href="$class_args.html#a3de0eb807ee242d78ef1b59549a4993f" title="Add a key to the data store that will not expect a value to be attached. A key is made up of a shore ..." alt="" coords="137,5,250,32"/>
+<area shape="rect" id="node3" href="$class_args.html#a3586a766cf461c73627d4ba6a90decf2" title="Add a flag that will have a value attached when it is tested and retrieved. IF no value is supplied o..." alt="" coords="108,56,279,83"/>
+<area shape="rect" id="node4" href="$class_args.html#a3d9a5a668375498f412e230eedbc8879" title="Test if a key is present. this function can be used to test the presence of a key for a flag,..." alt="" coords="115,107,271,133"/>
+</map>

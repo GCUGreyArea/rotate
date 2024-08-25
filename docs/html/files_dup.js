@@ -19,6 +19,7 @@ var files_dup =
     [ "HexString.h", "_hex_string_8h.html", [
       [ "HexString", "class_hex_string.html", "class_hex_string" ]
     ] ],
+    [ "main.cpp", "main_8cpp.html", "main_8cpp" ],
     [ "test_main.cpp", "test__main_8cpp.html", "test__main_8cpp" ],
     [ "testBuffer.cpp", "test_buffer_8cpp.html", "test_buffer_8cpp" ]
 ];
