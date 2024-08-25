@@ -74,18 +74,22 @@ The class hierachy is designed with Test Driven Development (TDD) in mide. The b
 
 All classes have been designed to whipe memory clean after use.
 
-- [Class hierarch](https://gcugreyarea.github.io/rotate/inherits.html)
-- [Classes](https://gcugreyarea.github.io/rotate/annotated.html)
+- [Class hierarch](https://gcugreyarea.github.io/rotate/html/inherits.html)
+- [Classes](https://gcugreyarea.github.io/rotate/html/annotated.html)
 
 ## Code documentation
 
 Code docs are created thrwough [Doxygen](https://www.doxygen.nl/).Thnis generates `HTML` content that can be hosted in a `GitHub` repository. Click the link to view the documentation for [this project](https://gcugreyarea.github.io/rotate/).
 
-The `HTML` generated in the `doc` folder by `doxygen` under `doc/output/html` is moved into the `docs` folder so that they can be hosted on the [git repo](https://github.com/GCUGreyArea/rotate). This is the configured folder use to host the `HTML` content for this repo.
+The `HTML` generated in the `doc` folder by `doxygen` under `doc/output/html` is moved into the `docs` folder so that they can be hosted on the [git repo](https://github.com/GCUGreyArea/rotate/html). This is the configured folder use to host the `HTML` content for this repo.
 
 ## Reseaerch lilnks / externaly sourced code segments
 
 1. [split string](https://stackoverflow.com/questions/14265581/parse-split-a-string-in-c-using-string-delimiter-standard-c)
+
+
+## Issues 
+
 
 ## TODO
 
