@@ -1,9 +1,12 @@
 FROM ubuntu:latest
-RUN apt-get update \
-  && apt-get install -y python3 build-essential make sudo git cmake doxygen \
-  && rm -rf /var/lib/apt/lists/*
 
-RUN useradd -ms /bin/bash barry && echo '%sudo ALL=(ALL:ALL) ALL' >> /etc/sudoers
+RUN apt update
+RUN apt install python3 build-essential make sudo git cmake doxygen -y 
+RUN useradd -ms /bin/bash barry
+RUN echo "barry     ALL=(ALL:ALL) NOPASSWD:ALL" >> /etc/sudoers
+RUN echo "barry:barry" | chpasswd
+RUN echo "root:root" | chpasswd
+
 WORKDIR /home/barry/rotate
 RUN cd /home/barry \
     && git clone https://github.com/google/googletest.git \
