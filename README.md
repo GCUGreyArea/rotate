@@ -61,3 +61,12 @@ Notes:
 - Please don’t spend more than an hour or two on it.
 - The above description is intended to be unambiguous and not be any sort of trick question: if you’re at all unclear about what we’re asking you to do then please ask.
 - Although the role requires Rust and Go on Linux, please don’t let that bias your selection of language or platform, unless you’re conβident in your knowledge of those languages and/or platform.
+
+## Other projects
+
+Please feel free to brows other projects on my GitHub account..
+
+- [regex parse](https://github.com/GCUGreyArea/regex-parser)
+- [python parser](https://github.com/GCUGreyArea/python-parser)
+- [ring buffer](https://github.com/GCUGreyArea/ring_buffer)
+- [AlertLogic code chalange](https://github.com/GCUGreyArea/AlertLogic)
