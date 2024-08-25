@@ -6,9 +6,8 @@ Bitwise rotate the content of a file. This code has been built and validated on 
 
 ## Dependancies
 
-The test code uses the [Google Test](https://github.com/google/googletest) framework which requires `cmake` and `g++` to build.
-You can install these by running `sudo apt install -y build-essential cmake git make doxygen`.
-
+The test code uses the [Google Test](https://github.com/google/googletest) framework, which requires `cmake` and `g++` to build.
+You can install these and other requirements by running `sudo apt install -y build-essential cmake git make doxygen cppcheck`.
 
 ```bash
 git clone https://github.com/GCUGreyArea/rotate.git
