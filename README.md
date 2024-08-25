@@ -78,7 +78,7 @@ All classes have been designed to wipe memory clean after use.
 
 ## Code documentation
 
-Code docs are created through [Doxygen](https://www.doxygen.nl/). This generates `HTML` content that can be hosted in a `GitHub` repository. Click the link to view the documentation for [this project](https://gcugreyarea.github.io/rotate/html/).
+[Code docs](https://gcugreyarea.github.io/rotate/html/) are created through [Doxygen](https://www.doxygen.nl/). This generates `HTML` content that can be hosted in a `GitHub` repository. Click the link to view the documentation for this project.
 
 The `HTML` generated in the `doc` folder by `doxygen` under `doc/output/html` is moved into the `docs` folder so that they can be hosted on the [git repo](https://github.com/GCUGreyArea/rotate/html/). This is the configured folder use to host the `HTML` content for this repo.
 
