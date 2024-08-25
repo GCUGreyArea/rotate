@@ -51,7 +51,7 @@ build :
 
 
 $(LIBTARGET) :  
-	cd $(LIBDIR) && make 
+	cd lib && make 
 
 $(TESTTARGET) : $(LIBTARGET)
 	cd $(TESTDIR) && make
@@ -92,6 +92,10 @@ project:
 	make
 	./$(TESTTARGET)
 	./$(BNCTARGET)
+
+docker:
+	docker build . -t rotate
+	docker run -ti rotate
 
 help:
 	@echo "\n\n"
