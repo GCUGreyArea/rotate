@@ -1,3 +1,14 @@
+/**
+ * @file Args.cpp
+ * @author Barry Robinson (barry.w.robinson64@gmail.com)
+ * @brief 
+ * @version 0.1
+ * @date 2024-08-25
+ * @file lib/src/Args.cpp
+ * @copyright Copyright (c) 2024
+ * 
+ */
+
 #include <iostream>
 #include <string>
 

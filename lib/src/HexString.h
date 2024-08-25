@@ -1,5 +1,6 @@
 #ifndef HEX_STRING_H
 #define HEX_STRING_H
+
 /**
  * @file HexString.h
  * @author Barry Robinson (barry.w.robinson64@gmail.com)
@@ -19,6 +20,7 @@
 #include <vector>
 #include "Base.h"
 #include "ArrayBuffer.h"
+
 
 class HexString : public Base {
 public:
