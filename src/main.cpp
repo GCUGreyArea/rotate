@@ -1,3 +1,14 @@
+/**
+ * @file main.cpp
+ * @author Barry Robinson(barry.w.robinson64@gmail.com)
+ * @brief Create a program to rotate the bits in a file either 
+ * left or right by one bit. 
+ * @version 0.1
+ * @date 2024-08-25
+ * 
+ * @copyright Copyright (c) 2024
+ */
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -22,26 +33,29 @@ static inline void do_help() {
 
 int main(int argc, char **argv)
 {
-    Args args(argc,argv);
+    Args * args = new Args(argc,argv);
 
-    args.add_key("-h","--help");
+    args->add_key("-h","--help");
 
-    args.add_string_value("-r","--rotate","left");
-    args.add_string_value("-i","--in-file","");
-    args.add_string_value("-o","--out-file","");
-    args.add_string_value("-s","--string","");
+    args->add_string_value("-r","--rotate","left");
+    args->add_string_value("-i","--in-file","");
+    args->add_string_value("-o","--out-file","");
+    args->add_string_value("-s","--string","");
 
 
-    if(args.is_key_present("-h")) {
+    if(args->is_key_present("-h")) {
         do_help();
+        delete args;
         exit(1);
     }
 
 
-    std::string rdir = args.get_string_value("-r");
-    std::string str  = args.get_string_value("-s");
-    std::string ifl  = args.get_string_value("-i");
-    std::string ofl  = args.get_string_value("-o");
+    std::string rdir = args->get_string_value("-r");
+    std::string str  = args->get_string_value("-s");
+    std::string ifl  = args->get_string_value("-i");
+    std::string ofl  = args->get_string_value("-o");
+
+    delete args;
 
     if(str != "") {
         // Do rotation on the hex string
@@ -59,8 +73,6 @@ int main(int argc, char **argv)
         std::string out = b.render();
 
         std::cout << "Rotated string " << rdir << ": " << out << std::endl;
-
-        exit(0);
     }
     else if(ifl != "" && ofl != "") {
         if(!std::filesystem::exists(ifl)) {
@@ -81,15 +93,14 @@ int main(int argc, char **argv)
         else {
             b.rotate_right();
         }
-
-        exit(1);
     }
+    else {
+        std::cout << "Incorect arguments used" << std::endl;
+        std::cout << "please follow instructions on the following help screen" << std::endl;
+        std::cout << std::endl;
 
-    std::cout << "Incorect arguments used" << std::endl;
-    std::cout << "please follow instructions on the following help screen" << std::endl;
-    std::cout << std::endl;
-
-    do_help();
+        do_help();
+    }
 
     return 1;
 }

@@ -18,6 +18,7 @@
 class Args {
 public:
     Args(int argc, char ** argv);
+    ~Args();
     void add_string_value(std::string idxName, std::string altName, std::string def = "");
     void add_int_value(std::string idxName, std::string altName, int def);
     void add_key(std::string key, std::string alt);

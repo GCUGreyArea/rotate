@@ -38,7 +38,6 @@ HexString::HexString(std::string hex) :
 HexString::~HexString() {
     std::memset((void*)m_src.data(),'\0',m_src.length());
     std::memset((void*)m_dst.data(),'\0',m_dst.length());
-
     delete m_arr;
 }
 

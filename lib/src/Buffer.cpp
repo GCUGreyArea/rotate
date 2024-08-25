@@ -12,6 +12,9 @@ Buffer::Buffer(std::string inf,std::string outf) :
 
 Buffer::~Buffer()
 {
+    // Zero out the memory used by the filenames
+    memset((void*)m_in.data(),'\0',m_in.length());
+    memset((void*)m_out.data(),'\0',m_out.length());
     m_in_file.close();
     m_out_file.close();
 }

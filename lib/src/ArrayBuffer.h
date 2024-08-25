@@ -21,8 +21,8 @@ class ArrayBuff : Base {
 public:
     virtual ~ArrayBuff() {
         // remove all data before deleting
-        memset(m_out,0,m_size);
-        memset(m_arr,0,m_size);
+        std::memset(m_out,0,m_size);
+        std::memset(m_arr,0,m_size);
         delete [] m_out;
         delete [] m_arr;
     }

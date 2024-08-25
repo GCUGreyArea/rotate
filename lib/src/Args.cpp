@@ -11,7 +11,7 @@
 
 #include <iostream>
 #include <string>
-
+#include <cstring>
 #include <map>
 
 #include "Args.h"
@@ -26,6 +26,23 @@
 Args::Args(int argc, char ** argv)
     : mArgv(argv)
     , mArgc(argc) {}
+
+
+Args::~Args() {
+    // Whipe the data in the maps
+    for (auto const& [key, val] : mIntArgs) {
+        std::memset((void*)key.data(),'\0',key.length());
+    }    
+
+    for(auto const& [key,val] : mStrArgs) {
+        std::memset((void*)key.data(),'\0',key.length());
+        std::memset((void*)val.data(),'\0',val.length());
+    } 
+
+    for (const auto& elem : mArgs) {
+        std::memset((void*)elem.data(),'\0',elem.length());
+    }
+}
 
 
 /**
