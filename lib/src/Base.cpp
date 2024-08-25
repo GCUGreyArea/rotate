@@ -1,8 +1,11 @@
 #include "Base.h"
 
-
 Base::~Base() {}
 
+/**
+ * @brief Implement the rotation algorithm that all derived classes will use.
+ * 
+ */
 void Base::rotate_left()
 {
     // We need the first byte and to save it's msb
@@ -29,6 +32,10 @@ void Base::rotate_left()
     write_next_byte(byte);
 }
 
+/**
+ * @brief Implement the rotate right algorithm that all derived classes wil use.
+ * 
+ */
 void Base::rotate_right()
 {
     // This time we need to save the first byte so we 

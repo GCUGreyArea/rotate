@@ -1,6 +1,5 @@
 #ifndef BASE_H
 #define BASE_H
-
 /**
  * @file Base.h
  * @author Barry Robinson (barry.w.robinson@gemail.com)

@@ -41,6 +41,17 @@ HexString::~HexString() {
     delete m_arr;
 }
 
+/**
+ * @brief Internal function used to parse a string in the form
+ * 0xAA,0xBB,...,0xDD into seperate bytes of 0xNN.
+ * @note This function does not belong in this class
+ * it shoul be moved out into it's own container as a 
+ * static or simple function in a library.
+ * 
+ * @param s 
+ * @param delimiter 
+ * @return std::vector<std::string> 
+ */
 std::vector<std::string> HexString::split(std::string s, std::string delimiter) {
     size_t pos_start = 0, pos_end, delim_len = delimiter.length();
     std::string token;
@@ -56,6 +67,14 @@ std::vector<std::string> HexString::split(std::string s, std::string delimiter) 
     return res;
 }
 
+/**
+ * @brief Trim leading spaces from a string. Used in parsing the hex string 
+ * @note This function needs to be moved out into a seperate lkibrary.
+ * 
+ * @param str 
+ * @param whitespace 
+ * @return std::string 
+ */
 std::string HexString::trim(const std::string& str, const std::string& whitespace)
 {
     const auto strBegin = str.find_first_not_of(whitespace);
@@ -68,10 +87,18 @@ std::string HexString::trim(const std::string& str, const std::string& whitespac
     return str.substr(strBegin, strRange);
 }
 
+/**
+ * @brief The initialisation frunction parses the hex string 
+ * then creates a vector uint8_t values to create an instance 
+ * of ArrayBuff. We use new, rather than std::shared_ptr so 
+ * that we can closely control when it is destroyed, thereby 
+ * cleaning up the memory used to store values.
+ * 
+ */
 void HexString::init() {
     // Split the string into hex values
     std::vector<std::string> vec = split(m_src,",");
-    // Place to put converted values
+    // Place to put conveofrted values
     std::vector<uint8_t> bytes;
 
     std::regex rx("[ ]*0x[0-9A-Fa-f]{2}");
@@ -94,34 +121,78 @@ void HexString::init() {
     m_arr->init();
 }
 
+/**
+ * @brief Fulfil the interface by calling ArrayBuff to get the next byte
+ * 
+ * @return uint8_t 
+ */
 uint8_t HexString::get_next_byte() {
     return m_arr->get_next_byte();
 } 
 
+
+/**
+ * @brief Fulfill the interface by calling ArrayBuff to write the next byte
+ * 
+ * @param byte 
+ */
 void HexString::write_next_byte(uint8_t byte) {
     m_arr->write_next_byte(byte);
 }
 
+/**
+ * @brief Fulfill the interface by calling ArrayBuff tp write the first byte
+ * 
+ * @param byte 
+ */
 void HexString::write_first_byte(uint8_t byte) {
     m_arr->write_first_byte(byte);
 }
 
+/**
+ * @brief Fulfill the interface by calling ArrayBuff to get the length of the buffer
+ * 
+ * @return unsigned int 
+ */
 unsigned int HexString::get_length() {
     return m_arr->get_length();
 }
 
+/**
+ * @brief Fulfill the interface by calling ArrayBuff to tell if its the end of the buffer
+ * 
+ * @return true 
+ * @return false 
+ */
 bool HexString::end() {
     return m_arr->end();
 }
 
+/**
+ * @brief While this looks counter intuative, Base::rotate_left() will call the functions 
+ * implement in this class, which wil. route the calls to the correct place, in this instance 
+ * m_arr (the ArrayBuff object)
+ * 
+ */
 void HexString::rotate_left() {
     Base::rotate_left();
 }
 
+/**
+ * @brief Route the call to Base so that calls routed above are called correctly. 
+ * See comment for previous function.
+ * 
+ */
 void HexString::rotate_right() {
     Base::rotate_right();
 }
 
+
+/**
+ * @brief Render the rotated result back into a string 
+ * 
+ * @return std::string 
+ */
 std::string HexString::render() {
     uint8_t * arr = m_arr->get_output(); 
     unsigned int size = m_arr->size();
