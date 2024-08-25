@@ -75,9 +75,8 @@ valgrind: $(TARGET)
 	valgrind --leak-check=full ./$(TARGET)
 
 docs: $(DOCTARGET)
+	rm -rf docs
 	cd $(DOXYDIR) && doxygen Doxyfile
-	rm -rf docs/output
-	cp -r  --preserve=links doc/output/html docs
 
 test: $(TESTTARGET)
 	cd $(LIBDIR) && make
