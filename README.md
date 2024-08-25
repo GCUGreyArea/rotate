@@ -67,6 +67,12 @@ Note:   If no value for '--rotate' is supplied, left is assumed
         If the file specified by '--in-file' cannot be read, the program will terminate
 ```
 
+## Building and running unit tests
+
+The unit tests use the Google Test framework, which needs to be installed for the tests to build. The project has been built arround the [latest release](https://github.com/google/googletest) so it is preferable that `gtest` is built from source, rathert than installed through `apt`. Please see [dependacies](#Dependancies) for build instructions.
+
+Tp run the unit tests, first run `source settings.sh` then run `test_rotate`
+
 ## Design rational
 
 The class hierarchy is designed with Test Driven Development (TDD) in mind. The base class `Base` (unimaginatively named) implement the bit rotation logic, and the derived classes `HexString` and `ArrayBuffer` use those services by implementing the virtual methods to access the underlying functionality.
