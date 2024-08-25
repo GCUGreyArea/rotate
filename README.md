@@ -81,20 +81,20 @@ All classes have been designed to whipe memory clean after use.
 
 Code docs are created thrwough [Doxygen](https://www.doxygen.nl/).Thnis generates `HTML` content that can be hosted in a `GitHub` repository. Click the link to view the documentation for [this project](https://gcugreyarea.github.io/rotate/).
 
-The `HTML` generated in the `doc` folder by `doxygen` under `doc/output/html` is moved into the `docs` folder so that they can be hosted on the [git repo](https://github.com/GCUGreyArea/rotate/html). This is the configured folder use to host the `HTML` content for this repo.
+The `HTML` generated in the `doc` folder by `doxygen` under `doc/output/html` is moved into the `docs` folder so that they can be hosted on the [git repo](https://github.com/GCUGreyArea/rotate/html/). This is the configured folder use to host the `HTML` content for this repo.
 
 ## Reseaerch lilnks / externaly sourced code segments
 
 1. [split string](https://stackoverflow.com/questions/14265581/parse-split-a-string-in-c-using-string-delimiter-standard-c)
 
+## Issues
 
-## Issues 
-
+1. There is an issue displaying source files from the code documentation when hosted on `github`
 
 ## TODO
 
-1. Fix the build system for dependancies and clean it up
-2. Either remove docs folder or add code documentation
+1. Fix the build system for dependancies and clean it up.
+2. Either remove docs folder or add code documentation, and find a fix for file issue.
 
 ## Brief
 
