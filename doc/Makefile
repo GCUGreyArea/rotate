@@ -4,4 +4,5 @@ docs: Doxyfile
 	doxygen $(DOXYFILE)
 
 clean:
-	rm -rf output
+	rm -rf ../docs
+
