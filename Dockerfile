@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 RUN apt-get update \
-  && apt-get install -y python3 build-essential make sudo git cmake \
+  && apt-get install -y python3 build-essential make sudo git cmake doxygen \
   && rm -rf /var/lib/apt/lists/*
 
 RUN useradd -ms /bin/bash barry && echo '%sudo ALL=(ALL:ALL) ALL' >> /etc/sudoers
