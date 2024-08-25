@@ -28,7 +28,7 @@ sudo cmake --install .
 
 ## Building the project
 
-If you would prefer not to polute the environment on you're machine, there is a docker build that can be built and executed by running 
+If you would prefer not to pollute the environment on your machine, there is a docker build that can be built and executed by running 
 
 ```bash
 make docker
@@ -64,26 +64,26 @@ OR
         ./build/rotate -s <HEX STRING> [-r | -rotate] [left | right]
         Take the HEX_STRING supplied as --string and rotate the bit values in the direction indicated by --rotate, then write the hex values to the console
 
-Note:   If no value for for '--rotate' is supplied, left is assumed
+Note:   If no value for '--rotate' is supplied, left is assumed
         If the file specified by '--in-file' cannot be read, the program will terminate
 ```
 
 ## Design rational
 
-The class hierachy is designed with Test Driven Development (TDD) in mide. The base class `Base` (unimaginatively named) implement the bit rotation logic, and the derived classes `HexString` and `ArrayBuffer` use those services by implementing the virtual methods to access the inderlying functionality.
+The class hierarchy is designed with Test Driven Development (TDD) in mind. The base class `Base` (unimaginatively named) implement the bit rotation logic, and the derived classes `HexString` and `ArrayBuffer` use those services by implementing the virtual methods to access the underlying functionality.
 
-All classes have been designed to whipe memory clean after use.
+All classes have been designed to wipe memory clean after use.
 
 - [Class hierarch](https://gcugreyarea.github.io/rotate/html/inherits.html)
 - [Classes](https://gcugreyarea.github.io/rotate/html/annotated.html)
 
 ## Code documentation
 
-Code docs are created thrwough [Doxygen](https://www.doxygen.nl/).Thnis generates `HTML` content that can be hosted in a `GitHub` repository. Click the link to view the documentation for [this project](https://gcugreyarea.github.io/rotate/).
+Code docs are created through [Doxygen](https://www.doxygen.nl/). This generates `HTML` content that can be hosted in a `GitHub` repository. Click the link to view the documentation for [this project](https://gcugreyarea.github.io/rotate/html/).
 
 The `HTML` generated in the `doc` folder by `doxygen` under `doc/output/html` is moved into the `docs` folder so that they can be hosted on the [git repo](https://github.com/GCUGreyArea/rotate/html/). This is the configured folder use to host the `HTML` content for this repo.
 
-## Reseaerch lilnks / externaly sourced code segments
+## Research links / externally sourced code segments
 
 1. [split string](https://stackoverflow.com/questions/14265581/parse-split-a-string-in-c-using-string-delimiter-standard-c)
 
@@ -93,8 +93,8 @@ The `HTML` generated in the `doc` folder by `doxygen` under `doc/output/html` is
 
 ## TODO
 
-1. Fix the build system for dependancies and clean it up.
-2. Either remove docs folder or add code documentation, and find a fix for file issue.
+1. Fix the build system for dependencies and clean it up.
+2. Either remove docs folder or add code documentation, and find a fix for the file issue.
 
 ## Brief
 
@@ -110,8 +110,7 @@ To clarify “rotated one bit”, if the input βile’s contents are a stream o
 
 b1 ... bMbN, where b0
 
-is the most signif‐
-icant bit of the βirst byte of the input βile, and bN is the least signiβicant bit of the last byte of the input βile:
+is the most significant bit of the βirst byte of the input βile, and bN is the least signiβicant bit of the last byte of the input βile:
 
 - Rotated one bit left means that the output βile is b1 ... bMbNb0
 - Rotated one bit right means that the output βile is bNb0
@@ -128,11 +127,11 @@ Notes:
 
 ## Other projects
 
-Please feel free to brows other projects on my GitHub account..
+Please feel free to browse other projects on my GitHub account.
 
 - [regex parser](https://github.com/GCUGreyArea/regex-parser): A simple log parsing engine based on the Google's [RE2](https://github.com/google/re2) regex engine and [Hyperscan](https://github.com/intel/hyperscan), a fast `C` based regex engine.
 - [python parser](https://github.com/GCUGreyArea/python-parser): A simple python message parsing framework using `Python`, with a [mongDB](https://www.mongodb.com/) backend storage, with `Docker` and `Docker compse` for auchestration, and [Flask](https://flask.palletsprojects.com/en/3.0.x/) to provide a `JSON` `REST` API.
-- [AlertLogic code chalange](https://github.com/GCUGreyArea/AlertLogic): A basic work letter frequency scanner written in `C` as a code chalange for a possition at `AlertLogic`
+- [AlertLogic code chalange](https://github.com/GCUGreyArea/AlertLogic): A basic work letter frequency scanner written in `C` as a code challenge for a position at `AlertLogic`
 - [simple scanner](https://github.com/GCUGreyArea/simple-scanner): A very simple scanner to parse bespoke message formats.
 - [ring buffer](https://github.com/GCUGreyArea/ring_buffer): A `ring buffer` implementation for lockless data transfer.
 - [KV Creator](https://github.com/GCUGreyArea/kv_creator): Create basic `KV` tokens.
