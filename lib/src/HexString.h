@@ -13,6 +13,7 @@
  * 
  */
 
+#include <stdint.h>
 #include <string>
 #include <memory>
 #include <vector>

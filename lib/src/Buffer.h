@@ -12,6 +12,8 @@
  * 
  */
 
+
+#include <stdint.h>
 #include "Base.h"
 #include <iostream>
 #include <fstream>
