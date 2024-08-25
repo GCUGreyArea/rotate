@@ -4,7 +4,7 @@ PWD 	   = $(shell pwd)
 BUILD	   = build
 TESTDIR    = test
 LIBDIR     = lib
-DOXYDIR	   = docs
+DOXYDIR	   = doc
 
 TESTTARGET = $(TESTDIR)/$(BUILD)/test_$(TARGET)
 LIBTARGET  = $(LIBDIR)/$(BUILD)/lib$(TARGET).so
@@ -76,6 +76,8 @@ valgrind: $(TARGET)
 
 docs: $(DOCTARGET)
 	cd $(DOXYDIR) && doxygen Doxyfile
+	rm -rf docs/output
+	cp -r doc/output/html docs
 
 test: $(TESTTARGET)
 	cd $(LIBDIR) && make
