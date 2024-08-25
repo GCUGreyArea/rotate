@@ -4,9 +4,49 @@
 
 Bitwise rotate the content of a file
 
+## Dependancies
+
+The test code uses the [Google Test](https://github.com/google/googletest) framework which requires `cmake` and `g++` to build.
+You can install these by running `sudo apt install -y build-essential cmake git make`.
+If you want to build `GTest` (or pull this repository) you will also need `git`.
+
+```bash
+git clone https://github.com/google/googletest.git
+cd googletest
+mkdir -p build 
+cd build 
+cmake .. 
+cmake --build . 
+sudo cmake --install . 
+```
+
+## Building the project
+
+If you would prefer not to polute the environment on you're machine, there is a docker build that can be built and executed by running 
+
+```bash
+make docker
+``` 
+
+Otherwise, just run
+
+```bash
+make project  
+OR
+make
+``` 
+
+In order to set up the path for the program (rather than runing it from the local directory), you can run 
+
+```bash
+source settings.sh
+OR 
+. ./settings.sh
+```
+
 ## Help
 
-```
+```bash
         ./build/rotate [-i | --in-file] <infile.bin> [-o | --out-file] <outfile.bin> [-r | --rotate] [left | right]
         Take the content of infile.bin and rotate bits in '--rotate' direction, writing the output to outfile.bin
 
@@ -68,5 +108,7 @@ Please feel free to brows other projects on my GitHub account..
 
 - [regex parse](https://github.com/GCUGreyArea/regex-parser)
 - [python parser](https://github.com/GCUGreyArea/python-parser)
-- [ring buffer](https://github.com/GCUGreyArea/ring_buffer)
 - [AlertLogic code chalange](https://github.com/GCUGreyArea/AlertLogic)
+- [simple scanner](https://github.com/GCUGreyArea/simple-scanner)
+- [ring buffer](https://github.com/GCUGreyArea/ring_buffer)
+- [KV Creator](https://github.com/GCUGreyArea/kv_creator)
