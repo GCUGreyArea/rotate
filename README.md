@@ -74,6 +74,9 @@ The class hierachy is designed with Test Driven Development (TDD) in mide. The b
 
 All classes have been designed to whipe memory clean after use.
 
+- [Class hierarch](https://gcugreyarea.github.io/rotate/inherits.html)
+- [Classes](https://gcugreyarea.github.io/rotate/annotated.html)
+
 ## Code documentation
 
 Code docs are created thrwough [Doxygen](https://www.doxygen.nl/).Thnis generates `HTML` content that can be hosted in a `GitHub` repository. Click the link to view the documentation for [this project](https://gcugreyarea.github.io/rotate/).
