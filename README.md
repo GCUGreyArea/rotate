@@ -2,13 +2,19 @@
 
 ![image](resources/hexegic.png)
 
-Bitwise rotate the content of a file
+Bitwise rotate the content of a file. This code has been built and validated on `WSL2` `Ubuntu 22.04` and `Docker` `Ubuntu 22.04`.
 
 ## Dependancies
 
 The test code uses the [Google Test](https://github.com/google/googletest) framework which requires `cmake` and `g++` to build.
-You can install these by running `sudo apt install -y build-essential cmake git make`.
-If you want to build `GTest` (or pull this repository) you will also need `git`.
+You can install these by running `sudo apt install -y build-essential cmake git make doxygen`.
+
+
+```bash
+git clone https://github.com/GCUGreyArea/rotate.git
+```
+
+If you want to build `GTest` you will need to run the following commands
 
 ```bash
 git clone https://github.com/google/googletest.git
@@ -43,6 +49,11 @@ source settings.sh
 OR 
 . ./settings.sh
 ```
+
+## Set up Docker
+
+- [Setup docker on WSL2](https://docs.docker.com/desktop/wsl/)
+- [setup docker on Ubuntu](https://docs.docker.com/engine/install/ubuntu/)
 
 ## Help
 
