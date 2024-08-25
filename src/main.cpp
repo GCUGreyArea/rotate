@@ -42,13 +42,11 @@ int main(int argc, char **argv)
     args->add_string_value("-o","--out-file","");
     args->add_string_value("-s","--string","");
 
-
     if(args->is_key_present("-h")) {
         do_help();
         delete args;
         exit(1);
     }
-
 
     std::string rdir = args->get_string_value("-r");
     std::string str  = args->get_string_value("-s");
