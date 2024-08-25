@@ -12,7 +12,7 @@ LIBDEP  = $(LIBDIR)/$(BUILD)/$(LIB)
 CXXOBJ    := $(patsubst %.cpp,$(BUILD)/%.o,$(CXXSRC))
 COBJ      := $(patsubst %.c,$(BUILD)/%.o,$(CSRC))
 PWD       := $(shell pwd)
-LINK      := -lgtest -lglog -lpthread
+LINK      := -lgtest -lpthread
 
 ifeq ($(UNAME), Darwin)
 CC       = cc
