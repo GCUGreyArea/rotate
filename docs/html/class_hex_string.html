@@ -123,26 +123,35 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:aef05d95c25845d169586d2dfed6cf288"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the <a class="el" href="class_hex_string.html">HexString</a> object. Before we leave we need to zero out all memory that has been used. std::string only guareties that the memory will be reclaimed. Not that it will be whiped.  <a href="class_hex_string.html#aef05d95c25845d169586d2dfed6cf288">More...</a><br /></td></tr>
 <tr class="separator:aef05d95c25845d169586d2dfed6cf288"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a02fd73d861ef2e4aabb38c0c9ff82947"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hex_string.html#a02fd73d861ef2e4aabb38c0c9ff82947">init</a> ()</td></tr>
+<tr class="memdesc:a02fd73d861ef2e4aabb38c0c9ff82947"><td class="mdescLeft">&#160;</td><td class="mdescRight">The initialisation frunction parses the hex string then creates a vector uint8_t values to create an instance of <a class="el" href="class_array_buff.html">ArrayBuff</a>. We use new, rather than std::shared_ptr so that we can closely control when it is destroyed, thereby cleaning up the memory used to store values.  <a href="class_hex_string.html#a02fd73d861ef2e4aabb38c0c9ff82947">More...</a><br /></td></tr>
 <tr class="separator:a02fd73d861ef2e4aabb38c0c9ff82947"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a93c6a43cbad78ab161a8bfa3bf7be439"><td class="memItemLeft" align="right" valign="top">virtual uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hex_string.html#a93c6a43cbad78ab161a8bfa3bf7be439">get_next_byte</a> ()</td></tr>
+<tr class="memdesc:a93c6a43cbad78ab161a8bfa3bf7be439"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fulfil the interface by calling <a class="el" href="class_array_buff.html">ArrayBuff</a> to get the next byte.  <a href="class_hex_string.html#a93c6a43cbad78ab161a8bfa3bf7be439">More...</a><br /></td></tr>
 <tr class="separator:a93c6a43cbad78ab161a8bfa3bf7be439"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a74d6a61668ddf9afc299e87d84a26ba7"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hex_string.html#a74d6a61668ddf9afc299e87d84a26ba7">write_next_byte</a> (uint8_t byte)</td></tr>
+<tr class="memdesc:a74d6a61668ddf9afc299e87d84a26ba7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fulfill the interface by calling <a class="el" href="class_array_buff.html">ArrayBuff</a> to write the next byte.  <a href="class_hex_string.html#a74d6a61668ddf9afc299e87d84a26ba7">More...</a><br /></td></tr>
 <tr class="separator:a74d6a61668ddf9afc299e87d84a26ba7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac32a88955671b0ec57276b536a65393c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hex_string.html#ac32a88955671b0ec57276b536a65393c">write_first_byte</a> (uint8_t byte)</td></tr>
+<tr class="memdesc:ac32a88955671b0ec57276b536a65393c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fulfill the interface by calling <a class="el" href="class_array_buff.html">ArrayBuff</a> tp write the first byte.  <a href="class_hex_string.html#ac32a88955671b0ec57276b536a65393c">More...</a><br /></td></tr>
 <tr class="separator:ac32a88955671b0ec57276b536a65393c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a186b6e42a04c94a3e56f2b04f074a1bf"><td class="memItemLeft" align="right" valign="top">virtual unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hex_string.html#a186b6e42a04c94a3e56f2b04f074a1bf">get_length</a> ()</td></tr>
+<tr class="memdesc:a186b6e42a04c94a3e56f2b04f074a1bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fulfill the interface by calling <a class="el" href="class_array_buff.html">ArrayBuff</a> to get the length of the buffer.  <a href="class_hex_string.html#a186b6e42a04c94a3e56f2b04f074a1bf">More...</a><br /></td></tr>
 <tr class="separator:a186b6e42a04c94a3e56f2b04f074a1bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af545ab12986d2fe462f1013c3bafb5f3"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hex_string.html#af545ab12986d2fe462f1013c3bafb5f3">end</a> ()</td></tr>
+<tr class="memdesc:af545ab12986d2fe462f1013c3bafb5f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fulfill the interface by calling <a class="el" href="class_array_buff.html">ArrayBuff</a> to tell if its the end of the buffer.  <a href="class_hex_string.html#af545ab12986d2fe462f1013c3bafb5f3">More...</a><br /></td></tr>
 <tr class="separator:af545ab12986d2fe462f1013c3bafb5f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac0fba0f7971922867da6c383fdc01317"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hex_string.html#ac0fba0f7971922867da6c383fdc01317">rotate_left</a> ()</td></tr>
+<tr class="memdesc:ac0fba0f7971922867da6c383fdc01317"><td class="mdescLeft">&#160;</td><td class="mdescRight">While this looks counter intuative, <a class="el" href="class_base.html#ac0fba0f7971922867da6c383fdc01317" title="Implement the rotation algorithm that all derived classes will use.">Base::rotate_left()</a> will call the functions implement in this class, which wil. route the calls to the correct place, in this instance m_arr (the <a class="el" href="class_array_buff.html">ArrayBuff</a> object)  <a href="class_hex_string.html#ac0fba0f7971922867da6c383fdc01317">More...</a><br /></td></tr>
 <tr class="separator:ac0fba0f7971922867da6c383fdc01317"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c6ce63ce8fee1df509a46cb0df327db"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hex_string.html#a6c6ce63ce8fee1df509a46cb0df327db">rotate_right</a> ()</td></tr>
+<tr class="memdesc:a6c6ce63ce8fee1df509a46cb0df327db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Route the call to <a class="el" href="class_base.html">Base</a> so that calls routed above are called correctly. See comment for previous function.  <a href="class_hex_string.html#a6c6ce63ce8fee1df509a46cb0df327db">More...</a><br /></td></tr>
 <tr class="separator:a6c6ce63ce8fee1df509a46cb0df327db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a99716f3e613480649f5cf4b80872574f"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hex_string.html#a99716f3e613480649f5cf4b80872574f">get_rotate_byte</a> ()</td></tr>
 <tr class="separator:a99716f3e613480649f5cf4b80872574f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad20897c5c8bd47f5d4005989bead0e55"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hex_string.html#ad20897c5c8bd47f5d4005989bead0e55">reset</a> ()</td></tr>
 <tr class="separator:ad20897c5c8bd47f5d4005989bead0e55"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7bdd1b77ceb6bb9ffd06f967cebef90d"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hex_string.html#a7bdd1b77ceb6bb9ffd06f967cebef90d">render</a> ()</td></tr>
+<tr class="memdesc:a7bdd1b77ceb6bb9ffd06f967cebef90d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Render the rotated result back into a string.  <a href="class_hex_string.html#a7bdd1b77ceb6bb9ffd06f967cebef90d">More...</a><br /></td></tr>
 <tr class="separator:a7bdd1b77ceb6bb9ffd06f967cebef90d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_base"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_base')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_base.html">Base</a></td></tr>
 <tr class="memitem:a71e60efcd58e6d37412a1b93bbcd730a inherit pub_methods_class_base"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base.html#a71e60efcd58e6d37412a1b93bbcd730a">~Base</a> ()</td></tr>
@@ -151,8 +160,10 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a8576cbf87d6c3dda7a52ca4a56c5f2dc"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hex_string.html#a8576cbf87d6c3dda7a52ca4a56c5f2dc">trim</a> (const std::string &amp;str, const std::string &amp;whitespace=&quot; \t&quot;)</td></tr>
+<tr class="memdesc:a8576cbf87d6c3dda7a52ca4a56c5f2dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trim leading spaces from a string. Used in parsing the hex string.  <a href="class_hex_string.html#a8576cbf87d6c3dda7a52ca4a56c5f2dc">More...</a><br /></td></tr>
 <tr class="separator:a8576cbf87d6c3dda7a52ca4a56c5f2dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aab32c31a30b223c707d6eb1d064ebe25"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hex_string.html#aab32c31a30b223c707d6eb1d064ebe25">split</a> (std::string s, std::string delimiter)</td></tr>
+<tr class="memdesc:aab32c31a30b223c707d6eb1d064ebe25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal function used to parse a string in the form 0xAA,0xBB,...,0xDD into seperate bytes of 0xNN.  <a href="class_hex_string.html#aab32c31a30b223c707d6eb1d064ebe25">More...</a><br /></td></tr>
 <tr class="separator:aab32c31a30b223c707d6eb1d064ebe25"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -260,15 +271,20 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Fulfill the interface by calling <a class="el" href="class_array_buff.html">ArrayBuff</a> to tell if its the end of the buffer. </p>
+<dl class="section return"><dt>Returns</dt><dd>true </dd>
+<dd>
+false </dd></dl>
+
 <p>Implements <a class="el" href="class_base.html#a1e26d0fc45556405eeda566a0bb04854">Base</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_hex_string_8cpp_source.html#l00114">114</a> of file <a class="el" href="_hex_string_8cpp_source.html">HexString.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_hex_string_8cpp_source.html#l00167">167</a> of file <a class="el" href="_hex_string_8cpp_source.html">HexString.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_hex_string_af545ab12986d2fe462f1013c3bafb5f3_cgraph.png" border="0" usemap="#class_hex_string_af545ab12986d2fe462f1013c3bafb5f3_cgraph" alt=""/></div>
 <map name="class_hex_string_af545ab12986d2fe462f1013c3bafb5f3_cgraph" id="class_hex_string_af545ab12986d2fe462f1013c3bafb5f3_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,52,32"/>
+<area shape="rect" title="Fulfill the interface by calling ArrayBuff to tell if its the end of the buffer." alt="" coords="5,5,52,32"/>
 <area shape="rect" href="class_array_buff.html#a1c206505b75eec73acb77326cbaadf44" title=" " alt="" coords="100,5,215,32"/>
 </map>
 </div>
@@ -298,15 +314,18 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Fulfill the interface by calling <a class="el" href="class_array_buff.html">ArrayBuff</a> to get the length of the buffer. </p>
+<dl class="section return"><dt>Returns</dt><dd>unsigned int </dd></dl>
+
 <p>Implements <a class="el" href="class_base.html#a4a994561e7ee48627644ff40e85ceafd">Base</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_hex_string_8cpp_source.html#l00110">110</a> of file <a class="el" href="_hex_string_8cpp_source.html">HexString.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_hex_string_8cpp_source.html#l00157">157</a> of file <a class="el" href="_hex_string_8cpp_source.html">HexString.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_hex_string_a186b6e42a04c94a3e56f2b04f074a1bf_cgraph.png" border="0" usemap="#class_hex_string_a186b6e42a04c94a3e56f2b04f074a1bf_cgraph" alt=""/></div>
 <map name="class_hex_string_a186b6e42a04c94a3e56f2b04f074a1bf_cgraph" id="class_hex_string_a186b6e42a04c94a3e56f2b04f074a1bf_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,96,32"/>
+<area shape="rect" title="Fulfill the interface by calling ArrayBuff to get the length of the buffer." alt="" coords="5,5,96,32"/>
 <area shape="rect" href="class_array_buff.html#a2e02ee60ee6f877b70fb87e140d811e8" title=" " alt="" coords="144,5,304,32"/>
 </map>
 </div>
@@ -336,15 +355,18 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Fulfil the interface by calling <a class="el" href="class_array_buff.html">ArrayBuff</a> to get the next byte. </p>
+<dl class="section return"><dt>Returns</dt><dd>uint8_t </dd></dl>
+
 <p>Implements <a class="el" href="class_base.html#abf7685272fe333b4d48deae875049d78">Base</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_hex_string_8cpp_source.html#l00098">98</a> of file <a class="el" href="_hex_string_8cpp_source.html">HexString.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_hex_string_8cpp_source.html#l00129">129</a> of file <a class="el" href="_hex_string_8cpp_source.html">HexString.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_hex_string_a93c6a43cbad78ab161a8bfa3bf7be439_cgraph.png" border="0" usemap="#class_hex_string_a93c6a43cbad78ab161a8bfa3bf7be439_cgraph" alt=""/></div>
 <map name="class_hex_string_a93c6a43cbad78ab161a8bfa3bf7be439_cgraph" id="class_hex_string_a93c6a43cbad78ab161a8bfa3bf7be439_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,120,32"/>
+<area shape="rect" title="Fulfil the interface by calling ArrayBuff to get the next byte." alt="" coords="5,5,120,32"/>
 <area shape="rect" href="class_array_buff.html#a3c09583ba33c336d4ea1f71d5feaa487" title=" " alt="" coords="168,5,352,32"/>
 </map>
 </div>
@@ -419,18 +441,20 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>The initialisation frunction parses the hex string then creates a vector uint8_t values to create an instance of <a class="el" href="class_array_buff.html">ArrayBuff</a>. We use new, rather than std::shared_ptr so that we can closely control when it is destroyed, thereby cleaning up the memory used to store values. </p>
+
 <p>Implements <a class="el" href="class_base.html#ab5be7e5a13ea77d59aac45d21dceb6a0">Base</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_hex_string_8cpp_source.html#l00072">72</a> of file <a class="el" href="_hex_string_8cpp_source.html">HexString.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_hex_string_8cpp_source.html#l00098">98</a> of file <a class="el" href="_hex_string_8cpp_source.html">HexString.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_hex_string_a02fd73d861ef2e4aabb38c0c9ff82947_cgraph.png" border="0" usemap="#class_hex_string_a02fd73d861ef2e4aabb38c0c9ff82947_cgraph" alt=""/></div>
 <map name="class_hex_string_a02fd73d861ef2e4aabb38c0c9ff82947_cgraph" id="class_hex_string_a02fd73d861ef2e4aabb38c0c9ff82947_cgraph">
-<area shape="rect" title=" " alt="" coords="5,56,48,83"/>
+<area shape="rect" title="The initialisation frunction parses the hex string then creates a vector uint8_t values to create an ..." alt="" coords="5,56,48,83"/>
 <area shape="rect" href="class_array_buff.html#a9339772ec5ac9fa929938109207f2863" title=" " alt="" coords="96,5,208,32"/>
-<area shape="rect" href="class_hex_string.html#aab32c31a30b223c707d6eb1d064ebe25" title=" " alt="" coords="127,56,177,83"/>
-<area shape="rect" href="class_hex_string.html#a8576cbf87d6c3dda7a52ca4a56c5f2dc" title=" " alt="" coords="127,107,177,133"/>
+<area shape="rect" href="class_hex_string.html#aab32c31a30b223c707d6eb1d064ebe25" title="Internal function used to parse a string in the form 0xAA,0xBB,...,0xDD into seperate bytes of 0xNN." alt="" coords="127,56,177,83"/>
+<area shape="rect" href="class_hex_string.html#a8576cbf87d6c3dda7a52ca4a56c5f2dc" title="Trim leading spaces from a string. Used in parsing the hex string." alt="" coords="127,107,177,133"/>
 </map>
 </div>
 <div class="dynheader">
@@ -438,7 +462,7 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_hex_string_a02fd73d861ef2e4aabb38c0c9ff82947_icgraph.png" border="0" usemap="#class_hex_string_a02fd73d861ef2e4aabb38c0c9ff82947_icgraph" alt=""/></div>
 <map name="class_hex_string_a02fd73d861ef2e4aabb38c0c9ff82947_icgraph" id="class_hex_string_a02fd73d861ef2e4aabb38c0c9ff82947_icgraph">
-<area shape="rect" title=" " alt="" coords="108,5,151,32"/>
+<area shape="rect" title="The initialisation frunction parses the hex string then creates a vector uint8_t values to create an ..." alt="" coords="108,5,151,32"/>
 <area shape="rect" href="test_buffer_8cpp.html#accef14051a8d293e98ff36e0980a2d38" title=" " alt="" coords="5,5,60,32"/>
 </map>
 </div>
@@ -460,13 +484,16 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_hex_string_8cpp_source.html#l00126">126</a> of file <a class="el" href="_hex_string_8cpp_source.html">HexString.cpp</a>.</p>
+<p>Render the rotated result back into a string. </p>
+<dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_hex_string_8cpp_source.html#l00196">196</a> of file <a class="el" href="_hex_string_8cpp_source.html">HexString.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_hex_string_a7bdd1b77ceb6bb9ffd06f967cebef90d_cgraph.png" border="0" usemap="#class_hex_string_a7bdd1b77ceb6bb9ffd06f967cebef90d_cgraph" alt=""/></div>
 <map name="class_hex_string_a7bdd1b77ceb6bb9ffd06f967cebef90d_cgraph" id="class_hex_string_a7bdd1b77ceb6bb9ffd06f967cebef90d_cgraph">
-<area shape="rect" title=" " alt="" coords="5,31,69,57"/>
+<area shape="rect" title="Render the rotated result back into a string." alt="" coords="5,31,69,57"/>
 <area shape="rect" href="class_array_buff.html#a0a7510adf3a381af1f084ee71d82926d" title=" " alt="" coords="117,5,279,32"/>
 <area shape="rect" href="class_array_buff.html#a7033bafa80d2349b9b0da59d8c486767" title=" " alt="" coords="139,56,257,83"/>
 </map>
@@ -476,7 +503,7 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_hex_string_a7bdd1b77ceb6bb9ffd06f967cebef90d_icgraph.png" border="0" usemap="#class_hex_string_a7bdd1b77ceb6bb9ffd06f967cebef90d_icgraph" alt=""/></div>
 <map name="class_hex_string_a7bdd1b77ceb6bb9ffd06f967cebef90d_icgraph" id="class_hex_string_a7bdd1b77ceb6bb9ffd06f967cebef90d_icgraph">
-<area shape="rect" title=" " alt="" coords="108,5,172,32"/>
+<area shape="rect" title="Render the rotated result back into a string." alt="" coords="108,5,172,32"/>
 <area shape="rect" href="test_buffer_8cpp.html#accef14051a8d293e98ff36e0980a2d38" title=" " alt="" coords="5,5,60,32"/>
 </map>
 </div>
@@ -551,16 +578,18 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>While this looks counter intuative, <a class="el" href="class_base.html#ac0fba0f7971922867da6c383fdc01317" title="Implement the rotation algorithm that all derived classes will use.">Base::rotate_left()</a> will call the functions implement in this class, which wil. route the calls to the correct place, in this instance m_arr (the <a class="el" href="class_array_buff.html">ArrayBuff</a> object) </p>
+
 <p>Reimplemented from <a class="el" href="class_base.html#ac0fba0f7971922867da6c383fdc01317">Base</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_hex_string_8cpp_source.html#l00118">118</a> of file <a class="el" href="_hex_string_8cpp_source.html">HexString.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_hex_string_8cpp_source.html#l00177">177</a> of file <a class="el" href="_hex_string_8cpp_source.html">HexString.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_hex_string_ac0fba0f7971922867da6c383fdc01317_cgraph.png" border="0" usemap="#class_hex_string_ac0fba0f7971922867da6c383fdc01317_cgraph" alt=""/></div>
 <map name="class_hex_string_ac0fba0f7971922867da6c383fdc01317_cgraph" id="class_hex_string_ac0fba0f7971922867da6c383fdc01317_cgraph">
-<area shape="rect" title=" " alt="" coords="5,56,96,83"/>
-<area shape="rect" href="class_base.html#ac0fba0f7971922867da6c383fdc01317" title=" " alt="" coords="144,56,275,83"/>
+<area shape="rect" title="While this looks counter intuative, Base::rotate_left() will call the functions implement in this cla..." alt="" coords="5,56,96,83"/>
+<area shape="rect" href="class_base.html#ac0fba0f7971922867da6c383fdc01317" title="Implement the rotation algorithm that all derived classes will use." alt="" coords="144,56,275,83"/>
 <area shape="rect" href="class_base.html#a1e26d0fc45556405eeda566a0bb04854" title=" " alt="" coords="363,5,449,32"/>
 <area shape="rect" href="class_base.html#abf7685272fe333b4d48deae875049d78" title=" " alt="" coords="329,56,483,83"/>
 <area shape="rect" href="class_base.html#afee095dcc0c48494ced73bbba8deff26" title=" " alt="" coords="323,107,489,133"/>
@@ -571,7 +600,7 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_hex_string_ac0fba0f7971922867da6c383fdc01317_icgraph.png" border="0" usemap="#class_hex_string_ac0fba0f7971922867da6c383fdc01317_icgraph" alt=""/></div>
 <map name="class_hex_string_ac0fba0f7971922867da6c383fdc01317_icgraph" id="class_hex_string_ac0fba0f7971922867da6c383fdc01317_icgraph">
-<area shape="rect" title=" " alt="" coords="108,5,199,32"/>
+<area shape="rect" title="While this looks counter intuative, Base::rotate_left() will call the functions implement in this cla..." alt="" coords="108,5,199,32"/>
 <area shape="rect" href="test_buffer_8cpp.html#accef14051a8d293e98ff36e0980a2d38" title=" " alt="" coords="5,5,60,32"/>
 </map>
 </div>
@@ -601,16 +630,18 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Route the call to <a class="el" href="class_base.html">Base</a> so that calls routed above are called correctly. See comment for previous function. </p>
+
 <p>Reimplemented from <a class="el" href="class_base.html#a6c6ce63ce8fee1df509a46cb0df327db">Base</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_hex_string_8cpp_source.html#l00122">122</a> of file <a class="el" href="_hex_string_8cpp_source.html">HexString.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_hex_string_8cpp_source.html#l00186">186</a> of file <a class="el" href="_hex_string_8cpp_source.html">HexString.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_hex_string_a6c6ce63ce8fee1df509a46cb0df327db_cgraph.png" border="0" usemap="#class_hex_string_a6c6ce63ce8fee1df509a46cb0df327db_cgraph" alt=""/></div>
 <map name="class_hex_string_a6c6ce63ce8fee1df509a46cb0df327db_cgraph" id="class_hex_string_a6c6ce63ce8fee1df509a46cb0df327db_cgraph">
-<area shape="rect" title=" " alt="" coords="5,81,104,108"/>
-<area shape="rect" href="class_base.html#a6c6ce63ce8fee1df509a46cb0df327db" title=" " alt="" coords="152,81,291,108"/>
+<area shape="rect" title="Route the call to Base so that calls routed above are called correctly. See comment for previous func..." alt="" coords="5,81,104,108"/>
+<area shape="rect" href="class_base.html#a6c6ce63ce8fee1df509a46cb0df327db" title="Implement the rotate right algorithm that all derived classes wil use." alt="" coords="152,81,291,108"/>
 <area shape="rect" href="class_base.html#a1e26d0fc45556405eeda566a0bb04854" title=" " alt="" coords="379,5,465,32"/>
 <area shape="rect" href="class_base.html#abf7685272fe333b4d48deae875049d78" title=" " alt="" coords="345,56,499,83"/>
 <area shape="rect" href="class_base.html#a495fbfd34b7f6f21a1cebc2e98b3b41f" title=" " alt="" coords="340,107,504,133"/>
@@ -622,7 +653,7 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_hex_string_a6c6ce63ce8fee1df509a46cb0df327db_icgraph.png" border="0" usemap="#class_hex_string_a6c6ce63ce8fee1df509a46cb0df327db_icgraph" alt=""/></div>
 <map name="class_hex_string_a6c6ce63ce8fee1df509a46cb0df327db_icgraph" id="class_hex_string_a6c6ce63ce8fee1df509a46cb0df327db_icgraph">
-<area shape="rect" title=" " alt="" coords="108,5,207,32"/>
+<area shape="rect" title="Route the call to Base so that calls routed above are called correctly. See comment for previous func..." alt="" coords="108,5,207,32"/>
 <area shape="rect" href="test_buffer_8cpp.html#ad0e0be4ec4d9cd3c5acf5641df3146bc" title=" " alt="" coords="5,5,60,32"/>
 </map>
 </div>
@@ -663,14 +694,25 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_hex_string_8cpp_source.html#l00045">45</a> of file <a class="el" href="_hex_string_8cpp_source.html">HexString.cpp</a>.</p>
+<p>Internal function used to parse a string in the form 0xAA,0xBB,...,0xDD into seperate bytes of 0xNN. </p>
+<dl class="section note"><dt>Note</dt><dd>This function does not belong in this class it shoul be moved out into it's own container as a static or simple function in a library.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td></td></tr>
+    <tr><td class="paramname">delimiter</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::vector&lt;std::string&gt; </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_hex_string_8cpp_source.html#l00055">55</a> of file <a class="el" href="_hex_string_8cpp_source.html">HexString.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_hex_string_aab32c31a30b223c707d6eb1d064ebe25_icgraph.png" border="0" usemap="#class_hex_string_aab32c31a30b223c707d6eb1d064ebe25_icgraph" alt=""/></div>
 <map name="class_hex_string_aab32c31a30b223c707d6eb1d064ebe25_icgraph" id="class_hex_string_aab32c31a30b223c707d6eb1d064ebe25_icgraph">
-<area shape="rect" title=" " alt="" coords="199,5,249,32"/>
-<area shape="rect" href="class_hex_string.html#a02fd73d861ef2e4aabb38c0c9ff82947" title=" " alt="" coords="108,5,151,32"/>
+<area shape="rect" title="Internal function used to parse a string in the form 0xAA,0xBB,...,0xDD into seperate bytes of 0xNN." alt="" coords="199,5,249,32"/>
+<area shape="rect" href="class_hex_string.html#a02fd73d861ef2e4aabb38c0c9ff82947" title="The initialisation frunction parses the hex string then creates a vector uint8_t values to create an ..." alt="" coords="108,5,151,32"/>
 <area shape="rect" href="test_buffer_8cpp.html#accef14051a8d293e98ff36e0980a2d38" title=" " alt="" coords="5,5,60,32"/>
 </map>
 </div>
@@ -711,14 +753,25 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_hex_string_8cpp_source.html#l00060">60</a> of file <a class="el" href="_hex_string_8cpp_source.html">HexString.cpp</a>.</p>
+<p>Trim leading spaces from a string. Used in parsing the hex string. </p>
+<dl class="section note"><dt>Note</dt><dd>This function needs to be moved out into a seperate lkibrary.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td></td></tr>
+    <tr><td class="paramname">whitespace</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_hex_string_8cpp_source.html#l00078">78</a> of file <a class="el" href="_hex_string_8cpp_source.html">HexString.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_hex_string_a8576cbf87d6c3dda7a52ca4a56c5f2dc_icgraph.png" border="0" usemap="#class_hex_string_a8576cbf87d6c3dda7a52ca4a56c5f2dc_icgraph" alt=""/></div>
 <map name="class_hex_string_a8576cbf87d6c3dda7a52ca4a56c5f2dc_icgraph" id="class_hex_string_a8576cbf87d6c3dda7a52ca4a56c5f2dc_icgraph">
-<area shape="rect" title=" " alt="" coords="199,5,248,32"/>
-<area shape="rect" href="class_hex_string.html#a02fd73d861ef2e4aabb38c0c9ff82947" title=" " alt="" coords="108,5,151,32"/>
+<area shape="rect" title="Trim leading spaces from a string. Used in parsing the hex string." alt="" coords="199,5,248,32"/>
+<area shape="rect" href="class_hex_string.html#a02fd73d861ef2e4aabb38c0c9ff82947" title="The initialisation frunction parses the hex string then creates a vector uint8_t values to create an ..." alt="" coords="108,5,151,32"/>
 <area shape="rect" href="test_buffer_8cpp.html#accef14051a8d293e98ff36e0980a2d38" title=" " alt="" coords="5,5,60,32"/>
 </map>
 </div>
@@ -749,15 +802,23 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Fulfill the interface by calling <a class="el" href="class_array_buff.html">ArrayBuff</a> tp write the first byte. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">byte</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p>Implements <a class="el" href="class_base.html#a495fbfd34b7f6f21a1cebc2e98b3b41f">Base</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_hex_string_8cpp_source.html#l00106">106</a> of file <a class="el" href="_hex_string_8cpp_source.html">HexString.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_hex_string_8cpp_source.html#l00148">148</a> of file <a class="el" href="_hex_string_8cpp_source.html">HexString.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_hex_string_ac32a88955671b0ec57276b536a65393c_cgraph.png" border="0" usemap="#class_hex_string_ac32a88955671b0ec57276b536a65393c_cgraph" alt=""/></div>
 <map name="class_hex_string_ac32a88955671b0ec57276b536a65393c_cgraph" id="class_hex_string_ac32a88955671b0ec57276b536a65393c_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,129,32"/>
+<area shape="rect" title="Fulfill the interface by calling ArrayBuff tp write the first byte." alt="" coords="5,5,129,32"/>
 <area shape="rect" href="class_array_buff.html#af2547eb6244d680d0f94557a557729d5" title=" " alt="" coords="177,5,371,32"/>
 </map>
 </div>
@@ -788,15 +849,23 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Fulfill the interface by calling <a class="el" href="class_array_buff.html">ArrayBuff</a> to write the next byte. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">byte</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p>Implements <a class="el" href="class_base.html#afee095dcc0c48494ced73bbba8deff26">Base</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_hex_string_8cpp_source.html#l00102">102</a> of file <a class="el" href="_hex_string_8cpp_source.html">HexString.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_hex_string_8cpp_source.html#l00139">139</a> of file <a class="el" href="_hex_string_8cpp_source.html">HexString.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_hex_string_a74d6a61668ddf9afc299e87d84a26ba7_cgraph.png" border="0" usemap="#class_hex_string_a74d6a61668ddf9afc299e87d84a26ba7_cgraph" alt=""/></div>
 <map name="class_hex_string_a74d6a61668ddf9afc299e87d84a26ba7_cgraph" id="class_hex_string_a74d6a61668ddf9afc299e87d84a26ba7_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,132,32"/>
+<area shape="rect" title="Fulfill the interface by calling ArrayBuff to write the next byte." alt="" coords="5,5,132,32"/>
 <area shape="rect" href="class_array_buff.html#a2fd625f4d7f0e483d5b9d6e27579046a" title=" " alt="" coords="180,5,376,32"/>
 </map>
 </div>

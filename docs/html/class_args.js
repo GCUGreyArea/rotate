@@ -1,6 +1,7 @@
 var class_args =
 [
     [ "Args", "class_args.html#ad751455ffd20c16f63a4e1c5bc203566", null ],
+    [ "~Args", "class_args.html#a59ddb11db515732d969897766703a5b6", null ],
     [ "add_int_value", "class_args.html#a256dfb3f737c88cc6fe9e52039e15920", null ],
     [ "add_key", "class_args.html#a3de0eb807ee242d78ef1b59549a4993f", null ],
     [ "add_string_value", "class_args.html#a3586a766cf461c73627d4ba6a90decf2", null ],

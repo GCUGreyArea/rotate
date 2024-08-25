@@ -1,4 +1,4 @@
 <map id="get_next_byte" name="get_next_byte">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,120,32"/>
+<area shape="rect" id="node1" title="Fulfil the interface by calling ArrayBuff to get the next byte." alt="" coords="5,5,120,32"/>
 <area shape="rect" id="node2" href="$class_array_buff.html#a3c09583ba33c336d4ea1f71d5feaa487" title=" " alt="" coords="168,5,352,32"/>
 </map>

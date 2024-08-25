@@ -1,8 +1,8 @@
 <map id="rotate_right" name="rotate_right">
-<area shape="rect" id="node1" title=" " alt="" coords="327,56,425,83"/>
-<area shape="rect" id="node2" href="$class_buffer.html#a6c6ce63ce8fee1df509a46cb0df327db" title=" " alt="" coords="120,5,267,32"/>
-<area shape="rect" id="node3" href="$class_hex_string.html#a6c6ce63ce8fee1df509a46cb0df327db" title=" " alt="" coords="108,56,279,83"/>
-<area shape="rect" id="node5" href="$class_array_buff.html#a9f967f7a6e68a1f40373efcad198178c" title=" " alt="" coords="110,107,277,133"/>
+<area shape="rect" id="node1" title="Implement the rotate right algorithm that all derived classes wil use." alt="" coords="327,56,425,83"/>
+<area shape="rect" id="node2" href="$class_buffer.html#a6c6ce63ce8fee1df509a46cb0df327db" title="Rotate the byte left by calling the underlying implementation." alt="" coords="120,5,267,32"/>
+<area shape="rect" id="node3" href="$class_hex_string.html#a6c6ce63ce8fee1df509a46cb0df327db" title="Route the call to Base so that calls routed above are called correctly. See comment for previous func..." alt="" coords="108,56,279,83"/>
+<area shape="rect" id="node5" href="$class_array_buff.html#a9f967f7a6e68a1f40373efcad198178c" title="Implement the rotate right algorithm that all derived classes wil use." alt="" coords="110,107,277,133"/>
 <area shape="rect" id="node4" href="$test_buffer_8cpp.html#ad0e0be4ec4d9cd3c5acf5641df3146bc" title=" " alt="" coords="5,56,60,83"/>
 <area shape="rect" id="node6" href="$test_buffer_8cpp.html#aaef33c5ae2faf6b81ba644e9a5b01299" title=" " alt="" coords="5,107,60,133"/>
 </map>
