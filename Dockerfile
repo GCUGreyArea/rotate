@@ -1,7 +1,7 @@
 FROM ubuntu:latest
 
 RUN apt update
-RUN apt install python3 build-essential make sudo git cmake doxygen -y 
+RUN apt install build-essential make sudo git cmake doxygen cppcheck -y 
 RUN useradd -ms /bin/bash barry
 RUN echo "barry     ALL=(ALL:ALL) NOPASSWD:ALL" >> /etc/sudoers
 RUN echo "barry:barry" | chpasswd
