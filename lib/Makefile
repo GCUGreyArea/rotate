@@ -35,7 +35,6 @@ build:
 	mkdir -p build/src
 
 $(TARGET) : $(OBJ)
-	@echo "$(OBJ)"
 	$(CXX) $(CXXFLAGS) $(OBJ) -shared -o $(BUILD)/$(TARGET)
 
 $(BUILD)/%.o: %.c
