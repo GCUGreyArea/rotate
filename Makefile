@@ -94,6 +94,7 @@ project:
 	./$(BNCTARGET)
 
 docker:
+	make clean 
 	docker build . -t rotate
 	docker run -ti rotate
 
@@ -102,12 +103,9 @@ help:
 	@echo "============================================================================================="
 	@echo "Run: 'make' to build the project"
 	@echo "Run: 'make test' to build unit tests"
-	@echo "Run: 'make benchmark' to build benchmarks - currently no benchmarks are implemented"
 	@echo "Run: 'make doxygen' to build doxygen documentation"
 	@echo "This project depends on:"
 	@echo "\tGoogles test framework availible at https://github.com/google/googletest"
-	@echo "\tGoogles benchmark framework availible at https://github.com/google/benchmark"
-	@echo "\tyaml-cpp availible at https://github.com/jbeder/yaml-cpp"
 	@echo "============================================================================================="
 	@echo "\n\n"
 
