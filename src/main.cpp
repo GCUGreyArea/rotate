@@ -21,20 +21,23 @@
 
 static inline void do_help() {
     std::cout << "Help" << std::endl;
-	std::cout << "\t./build/rotate [-i | --in-file] <infile.bin> [-o | --out-file] <outfile.bin> [-r | --rotate] [left | right]" << std::endl;
-    std::cout << "\tTake the content of infile.bin and rotate bits in '--rotate' direction, writing the output to outfile.bin" << std::endl;
-    std::cout << std::endl;
-    std::cout << "\t./build/rotate -s <HEX STRING> [-r | -rotate] [left | right]" << std::endl;
+	std::cout << "\t./build/rotate [-i | --in-file] <IN_FILE_NAME> [-o | --out-file] <OUT_FILE_NAME> [-r | --rotate] [left | right]" << std::endl;
+    std::cout << "\tTake the content of IN_FILE_NAME and rotate bits in '--rotate' direction, writing the output to OUT_FILE_NAME" << std::endl;
+    std::cout << "\n\t./build/rotate -s <HEX STRING> [-r | -rotate] [left | right]" << std::endl;
     std::cout << "\tTake the HEX_STRING supplied as --string and rotate the bit values in the direction indicated by --rotate, then write the hex values to the console" << std::endl;
-    std::cout << std::endl;
-    std::cout << "Note:\tIf no value for '--rotate' is supplied, left is assumed" << std::endl;
-    std::cout << "\tIf the file specified by '--in-file' cannot be read, the program will terminate" << std::endl;
+    std::cout << "\n\t./build/rotate -m <OUT_FILE_NAME> -s <HEX_STRING>" << std::endl;
+    std::cout << "\tTake the HEX_STRING supplied by --string and write it as bytes to the OUT_FILE_NAME supplied by --make" << std::endl;
+    std::cout << "\n\t./build/rotate -d <IN_FILE_NAME>" << std::endl;
+    std::cout << "\tDump the hexidecimal values from IN_FILE_NAME to the terminal" << std::endl;
+    std::cout << "\nNote:\tIf no value for '--rotate' is supplied for a rotate function, left is assumed" << std::endl;
+    std::cout << "\tIf the file specified by '--in-file' or `--dump` cannot be read, the program will terminate" << std::endl;
 }
 
 static bool check_file_exists(std::string & ifl) {
     if(!std::filesystem::exists(ifl)) {
         std::cout << std::endl;
-        std::cout << "please make sure you provide a complete path to the file" << std::endl;
+        std::cout << "Please make sure you provide a complete and correct path" << std::endl;
+        std::cout << "Coult not find file: " << ifl << std::endl;
         std::cout << std::endl;
         return false;
     }
