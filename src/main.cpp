@@ -57,18 +57,29 @@ int main(int argc, char **argv)
 
     if(str != "") {
         // Do rotation on the hex string
-        HexString b(str);
-        b.init();
+        HexString * b = new HexString(str);
+
+        try {
+            b->init();
+        }
+        catch(std::runtime_error& e) {
+            std::cerr << "Exception: " << e.what() << std::endl;
+            delete b;
+
+            return -1; 
+        }
+
 
         if(rdir == "left") {
-            b.rotate_left();
+            b->rotate_left();
         }
         else {
-            b.rotate_right();
+            b->rotate_right();
         }
-        b.reset();
+        b->reset();
 
-        std::string out = b.render();
+        std::string out = b->render();
+        delete b;
 
         std::cout << "Rotated string " << rdir << ": " << out << std::endl;
     }
