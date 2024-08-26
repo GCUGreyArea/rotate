@@ -58,8 +58,8 @@ public:
         if(m_place < m_size) {
             return m_arr[m_place++];
         }  else {
-            std::cerr << "Out of bounds" << std::endl; 
-            abort();
+            std::string err = "Idex out of bounds: " + m_place; 
+            throw std::runtime_error(err);
         }
     } 
     
