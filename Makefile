@@ -91,7 +91,8 @@ project:
 	./$(TESTTARGET)
 
 docker:
-	make clean 
+	rm -rf ./build
+	rm -rf ./lib/build
 	docker build . -t rotate
 	docker run -ti rotate
 
