@@ -9,6 +9,7 @@ var class_array_buff =
     [ "get_next_byte", "class_array_buff.html#a3c09583ba33c336d4ea1f71d5feaa487", null ],
     [ "get_output", "class_array_buff.html#a0a7510adf3a381af1f084ee71d82926d", null ],
     [ "get_rotate_byte", "class_array_buff.html#a99716f3e613480649f5cf4b80872574f", null ],
+    [ "get_source", "class_array_buff.html#a87181b3fa5616894b9c5b28093879a50", null ],
     [ "init", "class_array_buff.html#a9339772ec5ac9fa929938109207f2863", null ],
     [ "rotate_left", "class_array_buff.html#af823771cd23e7a8c9bc63efd4e055d8f", null ],
     [ "rotate_right", "class_array_buff.html#a9f967f7a6e68a1f40373efcad198178c", null ],

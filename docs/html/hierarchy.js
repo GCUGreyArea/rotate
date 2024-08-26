@@ -5,5 +5,6 @@ var hierarchy =
       [ "ArrayBuff", "class_array_buff.html", null ],
       [ "Buffer", "class_buffer.html", null ],
       [ "HexString", "class_hex_string.html", null ]
-    ] ]
+    ] ],
+    [ "StringUtils", "class_string_utils.html", null ]
 ];

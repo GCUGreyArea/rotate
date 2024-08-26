@@ -4,5 +4,6 @@ var annotated_dup =
     [ "ArrayBuff", "class_array_buff.html", "class_array_buff" ],
     [ "Base", "class_base.html", "class_base" ],
     [ "Buffer", "class_buffer.html", "class_buffer" ],
-    [ "HexString", "class_hex_string.html", "class_hex_string" ]
+    [ "HexString", "class_hex_string.html", "class_hex_string" ],
+    [ "StringUtils", "class_string_utils.html", null ]
 ];

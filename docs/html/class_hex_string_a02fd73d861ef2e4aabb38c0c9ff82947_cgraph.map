@@ -1,6 +1,6 @@
 <map id="init" name="init">
 <area shape="rect" id="node1" title="The initialisation frunction parses the hex string then creates a vector uint8_t values to create an ..." alt="" coords="5,56,48,83"/>
-<area shape="rect" id="node2" href="$class_array_buff.html#a9339772ec5ac9fa929938109207f2863" title=" " alt="" coords="96,5,208,32"/>
-<area shape="rect" id="node3" href="$class_hex_string.html#aab32c31a30b223c707d6eb1d064ebe25" title="Internal function used to parse a string in the form 0xAA,0xBB,...,0xDD into seperate bytes of 0xNN." alt="" coords="127,56,177,83"/>
-<area shape="rect" id="node4" href="$class_hex_string.html#a8576cbf87d6c3dda7a52ca4a56c5f2dc" title="Trim leading spaces from a string. Used in parsing the hex string." alt="" coords="127,107,177,133"/>
+<area shape="rect" id="node2" href="$class_array_buff.html#a9339772ec5ac9fa929938109207f2863" title=" " alt="" coords="103,5,215,32"/>
+<area shape="rect" id="node3" href="$class_string_utils.html#a4bb52545e75e765e725fa49e4496a364" title="Internal function used to parse a string in the form 0xAA,0xBB,...,0xDD into seperate bytes of 0xNN." alt="" coords="96,56,223,83"/>
+<area shape="rect" id="node4" href="$class_string_utils.html#aa854c0e655aa9a94910bd1fa1e19bc3a" title="Trim leading spaces from a string. Used in parsing the hex string." alt="" coords="97,107,222,133"/>
 </map>

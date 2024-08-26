@@ -136,8 +136,8 @@ $(document).ready(function(){initNavTree('_array_buffer_8h_source.html',''); ini
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">if</span>(m_place &lt; m_size) {</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="keywordflow">return</span> m_arr[m_place++];</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        }  <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            std::cerr &lt;&lt; <span class="stringliteral">&quot;Out of bounds&quot;</span> &lt;&lt; std::endl; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            abort();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            std::string err = <span class="stringliteral">&quot;Idex out of bounds: &quot;</span> + m_place; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <span class="keywordflow">throw</span> std::runtime_error(err);</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        }</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    } </div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    </div>
@@ -183,20 +183,24 @@ $(document).ready(function(){initNavTree('_array_buffer_8h_source.html',''); ini
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="keywordflow">return</span> m_out;</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    }</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
-<div class="line"><a name="l00108"></a><span class="lineno"><a class="line" href="class_array_buff.html#a7033bafa80d2349b9b0da59d8c486767">  108</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="class_array_buff.html#a7033bafa80d2349b9b0da59d8c486767">size</a>() {</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keywordflow">return</span> m_size;  </div>
+<div class="line"><a name="l00108"></a><span class="lineno"><a class="line" href="class_array_buff.html#a87181b3fa5616894b9c5b28093879a50">  108</a></span>&#160;    uint8_t * <a class="code" href="class_array_buff.html#a87181b3fa5616894b9c5b28093879a50">get_source</a>() {</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keywordflow">return</span> m_arr;</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    }</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    uint8_t * m_arr;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    uint8_t * m_out;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> m_size;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> m_place;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> m_out_place;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;};</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="preprocessor">#endif//ARRAY_BUFFER_H</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="class_array_buff.html#a7033bafa80d2349b9b0da59d8c486767">  112</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="class_array_buff.html#a7033bafa80d2349b9b0da59d8c486767">size</a>() {</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="keywordflow">return</span> m_size;  </div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    }</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    uint8_t * m_arr;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    uint8_t * m_out;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> m_size;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> m_place;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> m_out_place;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;};</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="preprocessor">#endif//ARRAY_BUFFER_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclass_array_buff_html_a0a7510adf3a381af1f084ee71d82926d"><div class="ttname"><a href="class_array_buff.html#a0a7510adf3a381af1f084ee71d82926d">ArrayBuff::get_output</a></div><div class="ttdeci">uint8_t * get_output()</div><div class="ttdef"><b>Definition:</b> <a href="_array_buffer_8h_source.html#l00104">ArrayBuffer.h:104</a></div></div>
@@ -204,10 +208,11 @@ $(document).ready(function(){initNavTree('_array_buffer_8h_source.html',''); ini
 <div class="ttc" id="aclass_array_buff_html_a6fd51a9ded6aacd47bd07a174207d343"><div class="ttname"><a href="class_array_buff.html#a6fd51a9ded6aacd47bd07a174207d343">ArrayBuff::ArrayBuff</a></div><div class="ttdeci">ArrayBuff(std::vector&lt; uint8_t &gt; ar)</div><div class="ttdef"><b>Definition:</b> <a href="_array_buffer_8h_source.html#l00039">ArrayBuffer.h:39</a></div></div>
 <div class="ttc" id="aclass_array_buff_html_a9f967f7a6e68a1f40373efcad198178c"><div class="ttname"><a href="class_array_buff.html#a9f967f7a6e68a1f40373efcad198178c">ArrayBuff::rotate_right</a></div><div class="ttdeci">virtual void rotate_right()</div><div class="ttdoc">Implement the rotate right algorithm that all derived classes wil use.</div><div class="ttdef"><b>Definition:</b> <a href="_array_buffer_8h_source.html#l00082">ArrayBuffer.h:82</a></div></div>
 <div class="ttc" id="aclass_array_buff_html_a99716f3e613480649f5cf4b80872574f"><div class="ttname"><a href="class_array_buff.html#a99716f3e613480649f5cf4b80872574f">ArrayBuff::get_rotate_byte</a></div><div class="ttdeci">uint8_t get_rotate_byte()</div><div class="ttdef"><b>Definition:</b> <a href="_array_buffer_8h_source.html#l00090">ArrayBuffer.h:90</a></div></div>
-<div class="ttc" id="aclass_array_buff_html_a7033bafa80d2349b9b0da59d8c486767"><div class="ttname"><a href="class_array_buff.html#a7033bafa80d2349b9b0da59d8c486767">ArrayBuff::size</a></div><div class="ttdeci">unsigned int size()</div><div class="ttdef"><b>Definition:</b> <a href="_array_buffer_8h_source.html#l00108">ArrayBuffer.h:108</a></div></div>
+<div class="ttc" id="aclass_array_buff_html_a7033bafa80d2349b9b0da59d8c486767"><div class="ttname"><a href="class_array_buff.html#a7033bafa80d2349b9b0da59d8c486767">ArrayBuff::size</a></div><div class="ttdeci">unsigned int size()</div><div class="ttdef"><b>Definition:</b> <a href="_array_buffer_8h_source.html#l00112">ArrayBuffer.h:112</a></div></div>
 <div class="ttc" id="aclass_array_buff_html_a77f14bd1f87498b64351b4aad88676fa"><div class="ttname"><a href="class_array_buff.html#a77f14bd1f87498b64351b4aad88676fa">ArrayBuff::~ArrayBuff</a></div><div class="ttdeci">virtual ~ArrayBuff()</div><div class="ttdef"><b>Definition:</b> <a href="_array_buffer_8h_source.html#l00022">ArrayBuffer.h:22</a></div></div>
 <div class="ttc" id="aclass_base_html"><div class="ttname"><a href="class_base.html">Base</a></div><div class="ttdef"><b>Definition:</b> <a href="_base_8h_source.html#l00023">Base.h:23</a></div></div>
 <div class="ttc" id="aclass_array_buff_html_a3c09583ba33c336d4ea1f71d5feaa487"><div class="ttname"><a href="class_array_buff.html#a3c09583ba33c336d4ea1f71d5feaa487">ArrayBuff::get_next_byte</a></div><div class="ttdeci">virtual uint8_t get_next_byte()</div><div class="ttdef"><b>Definition:</b> <a href="_array_buffer_8h_source.html#l00057">ArrayBuffer.h:57</a></div></div>
+<div class="ttc" id="aclass_array_buff_html_a87181b3fa5616894b9c5b28093879a50"><div class="ttname"><a href="class_array_buff.html#a87181b3fa5616894b9c5b28093879a50">ArrayBuff::get_source</a></div><div class="ttdeci">uint8_t * get_source()</div><div class="ttdef"><b>Definition:</b> <a href="_array_buffer_8h_source.html#l00108">ArrayBuffer.h:108</a></div></div>
 <div class="ttc" id="a_base_8h_html"><div class="ttname"><a href="_base_8h.html">Base.h</a></div><div class="ttdoc">The base class for the rotation system.   Base implements the bit rotation algorythm....</div></div>
 <div class="ttc" id="aclass_array_buff_html_af2547eb6244d680d0f94557a557729d5"><div class="ttname"><a href="class_array_buff.html#af2547eb6244d680d0f94557a557729d5">ArrayBuff::write_first_byte</a></div><div class="ttdeci">virtual void write_first_byte(uint8_t byte)</div><div class="ttdef"><b>Definition:</b> <a href="_array_buffer_8h_source.html#l00070">ArrayBuffer.h:70</a></div></div>
 <div class="ttc" id="aclass_array_buff_html"><div class="ttname"><a href="class_array_buff.html">ArrayBuff</a></div><div class="ttdef"><b>Definition:</b> <a href="_array_buffer_8h_source.html#l00020">ArrayBuffer.h:20</a></div></div>
