@@ -105,6 +105,10 @@ public:
         return m_out;
     }
 
+    uint8_t * get_source() {
+        return m_arr;
+    }
+
     unsigned int size() {
         return m_size;  
     }
