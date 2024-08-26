@@ -88,9 +88,10 @@ All classes have been designed to wipe memory clean after use.
 
 The `HTML` generated in the `doc` folder by `doxygen` under `doc/output/html` is moved into the `docs` folder so that they can be hosted on the [git repo](https://github.com/GCUGreyArea/rotate/html/). This is the configured folder use to host the `HTML` content for this repo.
 
-## Research links / externally sourced code segments
+## Research links / test / externally sourced code segments
 
 1. [split string](https://stackoverflow.com/questions/14265581/parse-split-a-string-in-c-using-string-delimiter-standard-c)
+2. [Regex 101](https://regex101.com/)
 
 ## Issues
 
