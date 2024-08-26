@@ -31,6 +31,16 @@ static inline void do_help() {
     std::cout << "\tIf the file specified by '--in-file' cannot be read, the program will terminate" << std::endl;
 }
 
+static bool check_file_exists(std::string & ifl) {
+    if(!std::filesystem::exists(ifl)) {
+        std::cout << std::endl;
+        std::cout << "please make sure you provide a complete path to the file" << std::endl;
+        std::cout << std::endl;
+        return false;
+    }
+    return true;
+}
+
 int main(int argc, char **argv)
 {
     Args * args = new Args(argc,argv);
@@ -42,11 +52,12 @@ int main(int argc, char **argv)
     args->add_string_value("-o","--out-file","");
     args->add_string_value("-s","--string","");
     args->add_string_value("-m","--make","output.bin");
+    args->add_string_value("-d","--dump","");
 
     if(args->is_key_present("-h")) {
         do_help();
         delete args;
-        exit(1);
+        return 0;
     }
 
     std::string rdir = args->get_string_value("-r");
@@ -54,13 +65,29 @@ int main(int argc, char **argv)
     std::string ifl  = args->get_string_value("-i");
     std::string ofl  = args->get_string_value("-o");
     std::string mf   = args->get_string_value("-m");
+    std::string df   = args->get_string_value("-d");
 
     delete args;
 
     if(str != "") {
+        // Make a binary file using the supplied string [-s | --string] 
+        // and the argument to [-m | --make]
         if(mf != "") {
+                HexString * b = new HexString(str);
+                b->init();
 
+                ArrayBuff * arr = b->get_array_buff();
+                uint8_t * bytes = arr->get_source();
+
+                std::cout << "Making binary file " << mf << std::endl;
+                std::ofstream of(mf,  std::ios::binary | std::ios::out);
+                for(unsigned int i=0;i<arr->size();i++) {
+                    std::cout << "Writing: " << std::hex << (int) bytes[i] << std::endl;
+                    of.write((const char*) &bytes[i],sizeof(uint8_t));
+                }
+                of.close();
         } 
+        // Otherwise use the string argument to rotate
         else {
             // Do rotation on the hex string
             HexString * b = new HexString(str);
@@ -90,12 +117,11 @@ int main(int argc, char **argv)
             std::cout << "Rotated string " << rdir << ": " << out << std::endl;
         }
     }
+    // Use [-i | --in-file] and [-o | --out-file] to do a bit rotation
+    // o the file contents 
     else if(ifl != "" && ofl != "") {
-        if(!std::filesystem::exists(ifl)) {
-            std::cout << std::endl;
-            std::cout << "file " << ifl << " can not be opened" << std::endl;
-            std::cout << "please make sure you provide a complete path to the file" << std::endl;
-            std::cout << std::endl;
+        // If the input file does exist that ='s a problem 
+        if(!check_file_exists(ifl)) {
             do_help();
             return -1;
         }
@@ -111,6 +137,38 @@ int main(int argc, char **argv)
         }
 
         delete b;
+    }
+    // Dump the content of a binary file has hex 
+    // Hexdump on my system messes up the byt order?
+    else if(df != "") {
+        if(!check_file_exists(df)) {
+            do_help();
+            return -1;
+        }
+
+        std::ifstream in(df,std::ios::binary | std::ios::in);
+
+        in.seekg(0, in.end);
+        unsigned int len = in.tellg();
+        in.seekg(0, in.beg);
+
+        int count = 0;
+        int row = 0;
+        uint8_t byte;
+        for(unsigned int i=0; i<len;i++) {
+            in.read((char*)&byte,1);
+            if(count == 0) {
+                std::cout << "\n" << std::setfill('0') << std::setw(4) << row << "\t";
+            }
+            std::cout << std::hex << std::setfill('0') << std::setw(2) << (int) byte << " ";
+            count++; 
+            if(count == 8) {
+                count = 0;
+                row++;
+            }
+        }
+        std::cout << std::endl;
+ 
     }
     else {
         std::cout << "Incorect arguments used" << std::endl;
