@@ -82,10 +82,8 @@ int main(int argc, char **argv)
                 ArrayBuff * arr = b->get_array_buff();
                 uint8_t * bytes = arr->get_source();
 
-                std::cout << "Making binary file " << mf << std::endl;
                 std::ofstream of(mf,  std::ios::binary | std::ios::out);
                 for(unsigned int i=0;i<arr->size();i++) {
-                    std::cout << "Writing: " << std::hex << (int) bytes[i] << std::endl;
                     of.write((const char*) &bytes[i],sizeof(uint8_t));
                 }
                 of.close();
