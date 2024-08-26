@@ -109,7 +109,7 @@ help:
 	@echo "============================================================================================="
 	@echo "Run: 'make' to build the project"
 	@echo "Run: 'make test' to build unit tests"
-	@echo "Run: 'make doxygen' to build doxygen documentation"
+	@echo "Run: 'make docs' to build doxygen documentation"
 	@echo "Run  'make check' to run cppcheck against code base"
 	@echo "This project depends on:"
 	@echo "\tGoogles test framework availible at https://github.com/google/googletest"
