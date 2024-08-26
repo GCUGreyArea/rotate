@@ -48,12 +48,6 @@ public:
     
     std::string render();
 
-
-
-protected:
-    std::string trim(const std::string& str, const std::string& whitespace = " \t");
-    std::vector<std::string> split(std::string s, std::string delimiter);
-
 private:
     std::string m_src;      //! source string
     std::string m_dst;      //! Destination rotated string
