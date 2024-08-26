@@ -72,7 +72,7 @@ clean:
 	rm -rf $(BUILD)
 
 valgrind: $(TARGET)
-	valgrind --leak-check=full ./$(TARGET)
+	valgrind --leak-check=full ./build/$(TARGET) -s 0xAA,0xAA,0xAA,0xAA
 
 docs: $(DOCTARGET)
 	rm -rf docs
@@ -81,10 +81,7 @@ docs: $(DOCTARGET)
 test: $(TESTTARGET)
 	cd $(LIBDIR) && make
 	cd $(TESTDIR) && make
-
-benchmark: $(BNCTARGET)
-	cd $(LIBDIR) && make
-	cd $(BENCHDIR) && make
+	./$(TESTTARGET)
 
 project:
 	cd $(LIBDIR) && make
@@ -92,7 +89,6 @@ project:
 	cd $(BENCHDIR) && make
 	make
 	./$(TESTTARGET)
-	./$(BNCTARGET)
 
 docker:
 	make clean 
@@ -111,6 +107,7 @@ help:
 	@echo "Run: 'make test' to build unit tests"
 	@echo "Run: 'make docs' to build doxygen documentation"
 	@echo "Run  'make check' to run cppcheck against code base"
+	@echo "Run: 'make valgrind' to run the program with valgrind against various tests"
 	@echo "This project depends on:"
 	@echo "\tGoogles test framework availible at https://github.com/google/googletest"
 	@echo "============================================================================================="
