@@ -48,6 +48,8 @@ public:
     
     std::string render();
 
+    ArrayBuff * get_array_buff() {return m_arr;}
+
 private:
     std::string m_src;      //! source string
     std::string m_dst;      //! Destination rotated string
