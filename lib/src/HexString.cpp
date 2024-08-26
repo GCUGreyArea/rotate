@@ -1,3 +1,4 @@
+#include "StringUtils.h"
 #include "HexString.h"
 #include <cstring>
 #include <regex>
@@ -42,52 +43,6 @@ HexString::~HexString() {
 }
 
 /**
- * @brief Internal function used to parse a string in the form
- * 0xAA,0xBB,...,0xDD into seperate bytes of 0xNN.
- * @note This function does not belong in this class
- * it shoul be moved out into it's own container as a 
- * static or simple function in a library.
- * 
- * @param s 
- * @param delimiter 
- * @return std::vector<std::string> 
- */
-std::vector<std::string> HexString::split(std::string s, std::string delimiter) {
-    size_t pos_start = 0, pos_end, delim_len = delimiter.length();
-    std::string token;
-    std::vector<std::string> res;
-
-    while ((pos_end = s.find(delimiter, pos_start)) != std::string::npos) {
-        token = s.substr (pos_start, pos_end - pos_start);
-        pos_start = pos_end + delim_len;
-        res.push_back (token);
-    }
-
-    res.push_back (s.substr (pos_start));
-    return res;
-}
-
-/**
- * @brief Trim leading spaces from a string. Used in parsing the hex string 
- * @note This function needs to be moved out into a seperate lkibrary.
- * 
- * @param str 
- * @param whitespace 
- * @return std::string 
- */
-std::string HexString::trim(const std::string& str, const std::string& whitespace)
-{
-    const auto strBegin = str.find_first_not_of(whitespace);
-    if (strBegin == std::string::npos)
-        return ""; // no content
-
-    const auto strEnd = str.find_last_not_of(whitespace);
-    const auto strRange = strEnd - strBegin + 1;
-
-    return str.substr(strBegin, strRange);
-}
-
-/**
  * @brief The initialisation frunction parses the hex string 
  * then creates a vector uint8_t values to create an instance 
  * of ArrayBuff. We use new, rather than std::shared_ptr so 
@@ -97,7 +52,7 @@ std::string HexString::trim(const std::string& str, const std::string& whitespac
  */
 void HexString::init() {
     // Split the string into hex values
-    std::vector<std::string> vec = split(m_src,",");
+    std::vector<std::string> vec = StringUtils::split(m_src,",");
     // Place to put conveofrted values
     std::vector<uint8_t> bytes;
 
@@ -109,7 +64,7 @@ void HexString::init() {
             throw std::runtime_error("Bad hex value: " + a);
         }
 
-        a = trim(a);
+        a = StringUtils::trim(a);
         
         uint8_t val = std::stoi(a.c_str(), 0, 16);
         bytes.push_back(val);
