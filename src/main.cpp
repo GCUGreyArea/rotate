@@ -41,6 +41,7 @@ int main(int argc, char **argv)
     args->add_string_value("-i","--in-file","");
     args->add_string_value("-o","--out-file","");
     args->add_string_value("-s","--string","");
+    args->add_string_value("-m","--make","output.bin");
 
     if(args->is_key_present("-h")) {
         do_help();
@@ -52,36 +53,42 @@ int main(int argc, char **argv)
     std::string str  = args->get_string_value("-s");
     std::string ifl  = args->get_string_value("-i");
     std::string ofl  = args->get_string_value("-o");
+    std::string mf   = args->get_string_value("-m");
 
     delete args;
 
     if(str != "") {
-        // Do rotation on the hex string
-        HexString * b = new HexString(str);
+        if(mf != "") {
 
-        try {
-            b->init();
-        }
-        catch(std::runtime_error& e) {
-            std::cerr << "Exception: " << e.what() << std::endl;
+        } 
+        else {
+            // Do rotation on the hex string
+            HexString * b = new HexString(str);
+
+            try {
+                b->init();
+
+                if(rdir == "left") {
+                    b->rotate_left();
+                }
+                else {
+                    b->rotate_right();
+                }
+            }
+            catch(std::runtime_error& e) {
+                std::cerr << "Exception: " << e.what() << std::endl;
+                delete b;
+
+                return -1; 
+            }
+
+            b->reset();
+
+            std::string out = b->render();
             delete b;
 
-            return -1; 
+            std::cout << "Rotated string " << rdir << ": " << out << std::endl;
         }
-
-
-        if(rdir == "left") {
-            b->rotate_left();
-        }
-        else {
-            b->rotate_right();
-        }
-        b->reset();
-
-        std::string out = b->render();
-        delete b;
-
-        std::cout << "Rotated string " << rdir << ": " << out << std::endl;
     }
     else if(ifl != "" && ofl != "") {
         if(!std::filesystem::exists(ifl)) {
@@ -90,18 +97,20 @@ int main(int argc, char **argv)
             std::cout << "please make sure you provide a complete path to the file" << std::endl;
             std::cout << std::endl;
             do_help();
-            exit(0);
+            return -1;
         }
 
-        Buffer b(ifl,ofl);
-        b.init();
+        Buffer * b  = new Buffer(ifl,ofl);
+        b->init();
 
         if(rdir == "left") {
-            b.rotate_left();
+            b->rotate_left();
         }
         else {
-            b.rotate_right();
+            b->rotate_right();
         }
+
+        delete b;
     }
     else {
         std::cout << "Incorect arguments used" << std::endl;
