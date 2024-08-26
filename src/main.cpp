@@ -156,18 +156,18 @@ int main(int argc, char **argv)
         in.seekg(0, in.beg);
 
         int count = 0;
-        int row = 0;
+        int num_bytes = 0;
         uint8_t byte;
         for(unsigned int i=0; i<len;i++) {
             in.read((char*)&byte,1);
             if(count == 0) {
-                std::cout << "\n" << std::setfill('0') << std::setw(4) << row << "\t";
+                std::cout << "\n" << std::setfill('0') << std::setw(4) << std::hex << num_bytes << "\t";
             }
             std::cout << std::hex << std::setfill('0') << std::setw(2) << (int) byte << " ";
             count++; 
-            if(count == 8) {
+            if(count == 16) {
                 count = 0;
-                row++;
+                num_bytes += 16;
             }
         }
         std::cout << std::endl;
