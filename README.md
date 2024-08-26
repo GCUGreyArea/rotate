@@ -56,15 +56,22 @@ OR
 
 ## Help
 
-```bash
-        ./build/rotate [-i | --in-file] <infile.bin> [-o | --out-file] <outfile.bin> [-r | --rotate] [left | right]
-        Take the content of infile.bin and rotate bits in '--rotate' direction, writing the output to outfile.bin
+```
+Help
+        ./build/rotate [-i | --in-file] <IN_FILE_NAME> [-o | --out-file] <OUT_FILE_NAME> [-r | --rotate] [left | right]
+        Take the content of IN_FILE_NAME and rotate bits in '--rotate' direction, writing the output to OUT_FILE_NAME
 
         ./build/rotate -s <HEX STRING> [-r | -rotate] [left | right]
         Take the HEX_STRING supplied as --string and rotate the bit values in the direction indicated by --rotate, then write the hex values to the console
 
-Note:   If no value for '--rotate' is supplied, left is assumed
-        If the file specified by '--in-file' cannot be read, the program will terminate
+        ./build/rotate -m <OUT_FILE_NAME> -s <HEX_STRING>
+        Take the HEX_STRING supplied by --string and write it as bytes to the OUT_FILE_NAME supplied by --make
+
+        ./build/rotate -d <IN_FILE_NAME>
+        Dump the hexidecimal values from IN_FILE_NAME to the terminal
+
+Note:   If no value for '--rotate' is supplied for a rotate function, left is assumed
+        If the file specified by '--in-file' or `--dump` cannot be read, the program will terminate
 ```
 
 ## Building and running unit tests
