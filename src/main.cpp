@@ -44,6 +44,7 @@ static bool check_file_exists(std::string & ifl) {
     return true;
 }
 
+
 int main(int argc, char **argv)
 {
     Args * args = new Args(argc,argv);
@@ -54,13 +55,13 @@ int main(int argc, char **argv)
     args->add_string_value("-i","--in-file","");
     args->add_string_value("-o","--out-file","");
     args->add_string_value("-s","--string","");
-    args->add_string_value("-m","--make","output.bin");
+    args->add_string_value("-m","--make","");
     args->add_string_value("-d","--dump","");
 
     if(args->is_key_present("-h")) {
         do_help();
         delete args;
-        return 0;
+        return -1;
     }
 
     std::string rdir = args->get_string_value("-r");
@@ -121,6 +122,13 @@ int main(int argc, char **argv)
     // Use [-i | --in-file] and [-o | --out-file] to do a bit rotation
     // o the file contents 
     else if(ifl != "" && ofl != "") {
+        if(ifl == ofl) {
+            std::cout << "--in-file cannot be the same as --out-file: " << std::endl;
+            std::cout << "--in-file:  " << ifl << std::endl;
+            std::cout << "--out-file: " << ofl << std::endl;
+
+            return -1;
+        }
         // If the input file does exist that ='s a problem 
         if(!check_file_exists(ifl)) {
             do_help();
