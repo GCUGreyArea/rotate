@@ -58,6 +58,9 @@ OR
 
 ```
 Help
+        ./build/rotate <IN_FILE_NAME> [right | left] <OUT_FILE_NAME>
+        Take the content of IN_FILE_NAME and rotate bits either left or right, writing the output to OUT_FILE_NAME
+
         ./build/rotate [-i | --in-file] <IN_FILE_NAME> [-o | --out-file] <OUT_FILE_NAME> [-r | --rotate] [left | right]
         Take the content of IN_FILE_NAME and rotate bits in '--rotate' direction, writing the output to OUT_FILE_NAME
 
