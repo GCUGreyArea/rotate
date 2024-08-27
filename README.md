@@ -103,6 +103,7 @@ The `HTML` generated in the `doc` folder by `doxygen` under `doc/output/html` is
 ## Issues
 
 1. There is an issue displaying source files from the code documentation when hosted on `github`
+2. While `valgrind --leak-check=full ./build/rotate ./test/resources/output.bin left ./test/resources/out.bin` works and creates output, `make valgrind` fails to create output in the test directory.
 
 ## TODO
 

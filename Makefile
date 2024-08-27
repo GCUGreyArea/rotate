@@ -73,6 +73,7 @@ clean:
 
 valgrind: $(TARGET)
 	valgrind --leak-check=full ./build/$(TARGET) -s 0xAA,0xAA,0xAA,0xAA
+	valgrind --leak-check=full ./build/$(TARGET) ./test/resources/output.bin left ./test/resources/out.bin
 
 docs: $(DOCTARGET)
 	rm -rf docs
