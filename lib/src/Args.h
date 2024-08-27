@@ -25,7 +25,7 @@ public:
     int get_int_value(std::string key);
     std::string get_string_value(std::string key);
     bool is_key_present(std::string key);
-
+    unsigned int get_size() {return mArgs.size();}
 
 private:
     char ** mArgv;

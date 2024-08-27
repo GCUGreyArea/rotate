@@ -21,7 +21,9 @@
 
 static inline void do_help() {
     std::cout << "Help" << std::endl;
-	std::cout << "\t./build/rotate [-i | --in-file] <IN_FILE_NAME> [-o | --out-file] <OUT_FILE_NAME> [-r | --rotate] [left | right]" << std::endl;
+    std::cout << "\t./build/rotate <IN_FILE_NAME> [right | left] <OUT_FILE_NAME>" << std::endl;
+    std::cout << "\tTake the content of IN_FILE_NAME and rotate bits either left or right, writing the output to OUT_FILE_NAME" << std::endl;
+	std::cout << "\n\t./build/rotate [-i | --in-file] <IN_FILE_NAME> [-o | --out-file] <OUT_FILE_NAME> [-r | --rotate] [left | right]" << std::endl;
     std::cout << "\tTake the content of IN_FILE_NAME and rotate bits in '--rotate' direction, writing the output to OUT_FILE_NAME" << std::endl;
     std::cout << "\n\t./build/rotate -s <HEX STRING> [-r | -rotate] [left | right]" << std::endl;
     std::cout << "\tTake the HEX_STRING supplied as --string and rotate the bit values in the direction indicated by --rotate, then write the hex values to the console" << std::endl;
@@ -64,14 +66,25 @@ int main(int argc, char **argv)
         return -1;
     }
 
-    std::string rdir = args->get_string_value("-r");
-    std::string str  = args->get_string_value("-s");
-    std::string ifl  = args->get_string_value("-i");
-    std::string ofl  = args->get_string_value("-o");
-    std::string mf   = args->get_string_value("-m");
-    std::string df   = args->get_string_value("-d");
+    std::string rdir  = args->get_string_value("-r");
+    std::string str   = args->get_string_value("-s");
+    std::string ifl   = args->get_string_value("-i");
+    std::string ofl   = args->get_string_value("-o");
+    std::string mf    = args->get_string_value("-m");
+    std::string df    = args->get_string_value("-d");
+    unsigned int size =  args->get_size();
 
     delete args;
+
+    // If there are no command line arguments, assume we have basic input 
+    // as long as there is three comandline values on the command line 
+    if(size == 0) {
+        if(argc == 4) {
+            ifl = argv[1];
+            rdir = argv[2];
+            ofl = argv[3];
+        }
+    }
 
     if(str != "") {
         // Make a binary file using the supplied string [-s | --string] 
