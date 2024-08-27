@@ -77,6 +77,23 @@ Note:   If no value for '--rotate' is supplied for a rotate function, left is as
         If the file specified by '--in-file' or `--dump` cannot be read, the program will terminate
 ```
 
+## Functional test 
+
+```bash
+./build/rotate ./build/rotate left tmp
+./build/rotate tmp right out
+chmod +x out
+./out 
+Incorect arguments used
+please follow instructions on the following help screen
+
+Help
+        ./build/rotate <IN_FILE_NAME> [right | left] <OUT_FILE_NAME>
+        Take the content of IN_FILE_NAME and rotate bits either left or right, writing the output to OUT_FILE_NAME
+
+...
+```
+
 ## Building and running unit tests
 
 The unit tests use the Google Test framework, which needs to be installed for the tests to build. The project has been built arround the [latest release](https://github.com/google/googletest) so it is preferable that `gtest` is built from source, rathert than installed through `apt`. Please see [dependacies](#Dependancies) for build instructions.
