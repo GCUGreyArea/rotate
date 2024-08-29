@@ -90,8 +90,6 @@ please follow instructions on the following help screen
 Help
         ./build/rotate <IN_FILE_NAME> [right | left] <OUT_FILE_NAME>
         Take the content of IN_FILE_NAME and rotate bits either left or right, writing the output to OUT_FILE_NAME
-
-...
 ```
 
 ## Building and running unit tests
@@ -108,6 +106,12 @@ All classes have been designed to wipe memory clean after use.
 
 - [Class hierarch](https://gcugreyarea.github.io/rotate/html/inherits.html)
 - [Classes](https://gcugreyarea.github.io/rotate/html/annotated.html)
+
+## Vulnrabillities 
+
+- [TOC/TOU](https://en.wikipedia.org/wiki/Time-of-check_to_time-of-use): Because the file is being read in one byte at a time it is vulnerable to interception and change. For instance, an attacer could simply wait for a write to the output file, then write an extra byte to teh input file, trapping the program in an infinite loop. Or, they could wait until the existance of the file had been verified, then replace the file with a sim link. There are two things that can done to alieviate this problem.
+    1. Read the content of the file into the buffer for processing rather than reading one byte at a time. 
+    2. Valiate the existance of the fie at the point of reading by use of execptions.     
 
 ## Code documentation
 
